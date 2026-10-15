@@ -1,0 +1,232 @@
+:root {
+  --turquesa: #0bc3c4;
+  --turquesa-suave: rgba(11, 195, 196, .14);
+  --petroleo: #1b323d;
+  --fondo: #0b171d;
+  --fondo-2: #10222a;
+  --tarjeta: #132a33;
+  --texto: #eef6f7;
+  --texto-2: #9db3ba;
+  --linea: rgba(255, 255, 255, .08);
+  --radio: 16px;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+img, video { display: block; max-width: 100%; }
+button { font: inherit; color: inherit; }
+
+/* ---------- Portada ---------- */
+.portada {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+  padding: clamp(56px, 10vw, 112px) 16px clamp(36px, 6vw, 64px);
+  text-align: center;
+  isolation: isolate;
+}
+.halo {
+  position: absolute; inset: 0; z-index: -1;
+  background:
+    radial-gradient(520px 320px at 50% 38%, rgba(11, 195, 196, .16), transparent 70%),
+    linear-gradient(180deg, var(--fondo-2), var(--fondo));
+}
+.logo {
+  width: clamp(150px, 26vw, 230px);
+  height: auto;
+  animation: entrar .9s cubic-bezier(.2, .7, .2, 1) both;
+}
+.lema {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .32em;
+  text-transform: uppercase;
+  color: var(--texto-2);
+  animation: entrar .9s .15s cubic-bezier(.2, .7, .2, 1) both;
+}
+.lema span { color: var(--turquesa); }
+
+/* ---------- Filtros ---------- */
+.filtros {
+  position: sticky; top: 0; z-index: 5;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 22px;
+  padding: 14px 16px;
+  background: rgba(11, 23, 29, .82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--linea);
+}
+.filtros-grupo { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.filtros-grupo.clientes:empty { display: none; }
+.chip {
+  border: 1px solid var(--linea);
+  background: transparent;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--texto-2);
+  cursor: pointer;
+  transition: background .2s, color .2s, border-color .2s;
+}
+.chip:hover { color: var(--texto); border-color: rgba(255, 255, 255, .2); }
+.chip[aria-pressed="true"] { background: var(--turquesa); border-color: var(--turquesa); color: #04262a; font-weight: 600; }
+.chip.cliente[aria-pressed="true"] { background: var(--turquesa-suave); color: var(--turquesa); border-color: rgba(11, 195, 196, .5); }
+.chip small { opacity: .65; margin-left: 4px; font-weight: 500; }
+
+/* ---------- Secciones ---------- */
+main { max-width: 1280px; margin: 0 auto; padding: 8px 16px 40px; }
+.seccion { padding-top: 40px; }
+.seccion[hidden] { display: none; }
+.titulo-seccion {
+  display: flex; align-items: baseline; gap: 12px;
+  margin: 0 0 20px;
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 800;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+}
+.titulo-seccion::before {
+  content: ''; width: 28px; height: 3px; border-radius: 2px;
+  background: var(--turquesa); align-self: center;
+}
+.titulo-seccion small { font-size: 13px; font-weight: 500; color: var(--texto-2); letter-spacing: .08em; }
+
+/* ---------- Tarjetas ---------- */
+.pieza {
+  position: relative;
+  display: block; width: 100%;
+  padding: 0; border: 0;
+  border-radius: var(--radio);
+  overflow: hidden;
+  background: var(--tarjeta);
+  cursor: pointer;
+  text-align: left;
+  transform: translateZ(0);
+  transition: transform .35s cubic-bezier(.2, .7, .2, 1), box-shadow .35s;
+  animation: entrar .6s cubic-bezier(.2, .7, .2, 1) both;
+}
+.pieza:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -18px rgba(11, 195, 196, .45); }
+.pieza:focus-visible { outline: 2px solid var(--turquesa); outline-offset: 3px; }
+.pieza img, .pieza video { width: 100%; height: 100%; object-fit: cover; }
+.pieza .capa {
+  position: absolute; inset: auto 0 0 0;
+  padding: 40px 14px 13px;
+  background: linear-gradient(transparent, rgba(4, 12, 15, .88));
+  display: grid; gap: 2px;
+  pointer-events: none;
+}
+.pieza .nombre { font-size: 14px; font-weight: 600; line-height: 1.3; }
+.pieza .marca { font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--turquesa); }
+
+.rejilla-reels {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 210px), 1fr));
+  gap: 16px;
+}
+.rejilla-reels .pieza { aspect-ratio: 9 / 16; }
+.rejilla-reels .pieza video { position: absolute; inset: 0; opacity: 0; transition: opacity .3s; }
+.rejilla-reels .pieza.reproduciendo video { opacity: 1; }
+.play {
+  position: absolute; top: 12px; right: 12px;
+  display: grid; place-items: center;
+  width: 34px; height: 34px; border-radius: 50%;
+  background: rgba(4, 12, 15, .55);
+  backdrop-filter: blur(6px);
+  pointer-events: none;
+}
+.play svg { width: 13px; height: 13px; margin-left: 2px; fill: #fff; }
+.duracion { position: absolute; top: 18px; left: 14px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-shadow: 0 1px 6px rgba(0, 0, 0, .7); pointer-events: none; }
+
+/* Mosaico: cada afiche ocupa tantas filas de 2px como su alto (app.js calcula el span) */
+.rejilla-afiches {
+  --hueco: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
+  grid-auto-rows: 2px;
+  column-gap: var(--hueco);
+  align-items: start;
+}
+.rejilla-afiches .pieza img { height: auto; }
+
+.vacio { text-align: center; color: var(--texto-2); padding: 80px 0; }
+
+/* ---------- Pie ---------- */
+.pie {
+  display: grid; justify-items: center; gap: 10px;
+  padding: 40px 16px 56px;
+  border-top: 1px solid var(--linea);
+  color: var(--texto-2);
+  font-size: 12px; letter-spacing: .14em; text-transform: uppercase;
+}
+.pie p { margin: 0; }
+
+/* ---------- Visor ---------- */
+.visor {
+  position: fixed; inset: 0; z-index: 50;
+  display: grid; grid-template-columns: auto 1fr auto; align-items: center;
+  background: rgba(3, 9, 12, .94);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  animation: aparecer .25s ease both;
+}
+.visor[hidden] { display: none; }
+.visor-contenido {
+  margin: 0; height: 100dvh;
+  display: grid; grid-template-rows: minmax(0, 1fr) auto; justify-items: center; align-items: center;
+  padding: 56px 0 18px; min-width: 0;
+}
+.visor-medio { display: grid; place-items: center; min-height: 0; width: 100%; }
+.visor-medio img, .visor-medio video {
+  max-height: calc(100dvh - 130px); max-width: 100%;
+  width: auto; height: auto;
+  border-radius: 12px;
+  box-shadow: 0 30px 80px -30px rgba(0, 0, 0, .8);
+}
+.visor figcaption { padding-top: 14px; text-align: center; font-size: 14px; font-weight: 600; }
+.visor figcaption span { display: block; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--turquesa); font-weight: 500; }
+.visor-cerrar, .visor-flecha {
+  border: 0; cursor: pointer;
+  background: rgba(255, 255, 255, .08);
+  border-radius: 50%;
+  display: grid; place-items: center;
+  transition: background .2s;
+}
+.visor-cerrar:hover, .visor-flecha:hover { background: rgba(11, 195, 196, .3); }
+.visor-cerrar { position: absolute; top: 12px; right: 12px; width: 42px; height: 42px; font-size: 16px; z-index: 2; }
+.visor-flecha { width: 48px; height: 48px; margin: 0 14px; font-size: 30px; line-height: 1; padding-bottom: 4px; }
+
+@media (max-width: 640px) {
+  .portada { padding: 40px 16px 28px; gap: 14px; }
+  .logo { width: 132px; }
+  .lema { font-size: 10.5px; letter-spacing: .26em; }
+  .filtros { gap: 8px; padding: 10px 12px; }
+  .chip { padding: 7px 13px; font-size: 12.5px; }
+  .rejilla-reels { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .rejilla-afiches { --hueco: 10px; grid-template-columns: repeat(2, 1fr); }
+  .pieza .capa { padding: 30px 10px 10px; }
+  .pieza .nombre { font-size: 12.5px; }
+  .visor { grid-template-columns: 1fr; }
+  .visor-flecha { position: absolute; bottom: 14px; z-index: 2; margin: 0; }
+  .visor-flecha.ant { left: 16px; }
+  .visor-flecha.sig { right: 16px; }
+  .visor-contenido { padding: 60px 8px 80px; }
+  .visor-medio img, .visor-medio video { max-height: calc(100dvh - 190px); }
+}
+
+@keyframes entrar { from { opacity: 0; transform: translateY(14px); } }
+@keyframes aparecer { from { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

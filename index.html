@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Vía Hub Studio · Portafolio</title>
+  <meta name="description" content="Reels y afiches creados por Vía Hub Studio.">
+  <meta name="theme-color" content="#0b171d">
+  <meta property="og:title" content="Vía Hub Studio · Portafolio">
+  <meta property="og:description" content="Reels y afiches creados por Vía Hub Studio.">
+  <meta property="og:image" content="assets/logo-oscuro.png">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header class="portada">
+    <div class="halo" aria-hidden="true"></div>
+    <img class="logo" src="assets/logo-oscuro.png" alt="Vía Hub Studio" width="520" height="507">
+    <p class="lema">Portafolio <span>·</span> Reels y afiches</p>
+  </header>
+
+  <nav class="filtros" aria-label="Filtrar">
+    <div class="filtros-grupo" id="filtrosTipo"></div>
+    <div class="filtros-grupo clientes" id="filtrosCliente"></div>
+  </nav>
+
+  <main>
+    <section id="seccionReels" class="seccion">
+      <h2 class="titulo-seccion"><span>Reels</span><small id="cuentaReels"></small></h2>
+      <div class="rejilla-reels" id="reels"></div>
+    </section>
+    <section id="seccionAfiches" class="seccion">
+      <h2 class="titulo-seccion"><span>Afiches</span><small id="cuentaAfiches"></small></h2>
+      <div class="rejilla-afiches" id="afiches"></div>
+    </section>
+    <p class="vacio" id="vacio" hidden>Muy pronto, nuevas piezas por aquí.</p>
+  </main>
+
+  <footer class="pie">
+    <img src="assets/isotipo-oscuro.png" alt="" width="44" height="35">
+    <p>Vía Hub Studio · Contenido para marcas</p>
+  </footer>
+
+  <div class="visor" id="visor" role="dialog" aria-modal="true" aria-label="Vista ampliada" hidden>
+    <button class="visor-cerrar" id="visorCerrar" aria-label="Cerrar">✕</button>
+    <button class="visor-flecha ant" id="visorAnt" aria-label="Anterior">‹</button>
+    <figure class="visor-contenido">
+      <div class="visor-medio" id="visorMedio"></div>
+      <figcaption id="visorPie"></figcaption>
+    </figure>
+    <button class="visor-flecha sig" id="visorSig" aria-label="Siguiente">›</button>
+  </div>
+
+  <script src="data/galeria.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
