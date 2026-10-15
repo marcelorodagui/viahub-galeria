@@ -1,5 +1,5 @@
 window.GALERIA = {
-  "actualizado": "2026-10-15T01:54:47.212Z",
+  "actualizado": "2026-10-15T02:00:40.733Z",
   "sitio": {
     "lema": "Tráfico relevante",
     "redes": []
@@ -64,6 +64,36 @@ window.GALERIA = {
     }
   ],
   "afiches": [
+    {
+      "id": "escanee-para-conocernos-fafe30",
+      "titulo": "Escanee para conocernos",
+      "cliente": "Ruá",
+      "fecha": "2026-10-15T02:00:11.323Z",
+      "imagen": "media/afiches/escanee-para-conocernos-fafe30.webp",
+      "mini": "media/afiches/escanee-para-conocernos-fafe30-mini.webp",
+      "w": 1600,
+      "h": 1600
+    },
+    {
+      "id": "ganadores-lawa-awards-2026-ef4fbc",
+      "titulo": "Ganadores LAWA Awards 2026",
+      "cliente": "Ruá",
+      "fecha": "2026-10-15T02:00:11.317Z",
+      "imagen": "media/afiches/ganadores-lawa-awards-2026-ef4fbc.webp",
+      "mini": "media/afiches/ganadores-lawa-awards-2026-ef4fbc-mini.webp",
+      "w": 1600,
+      "h": 1600
+    },
+    {
+      "id": "tarjeta-de-presentacion-537a64",
+      "titulo": "Tarjeta de presentación",
+      "cliente": "Ruá",
+      "fecha": "2026-10-15T02:00:11.312Z",
+      "imagen": "media/afiches/tarjeta-de-presentacion-537a64.webp",
+      "mini": "media/afiches/tarjeta-de-presentacion-537a64-mini.webp",
+      "w": 1600,
+      "h": 914
+    },
     {
       "id": "3-esto-es-lo-que-hago-todos-los-dias-ecd40c",
       "titulo": "Esto es lo que hago todos los días",
@@ -479,6 +509,11 @@ window.GALERIA = {
       "identidad": true,
       "redes": [
         {
+          "red": "instagram",
+          "texto": "@quirodei",
+          "url": "https://www.instagram.com/quirodei/"
+        },
+        {
           "red": "web",
           "texto": "quirodei.com",
           "url": "https://quirodei.com"
@@ -575,6 +610,11 @@ window.GALERIA = {
           "red": "instagram",
           "texto": "@musicarua",
           "url": "https://www.instagram.com/musicarua/"
+        },
+        {
+          "red": "web",
+          "texto": "musicarua.com",
+          "url": "https://musicarua.com"
         }
       ],
       "descripcion": "Música en vivo para bodas en Costa Rica.",
@@ -602,7 +642,13 @@ window.GALERIA = {
       "slug": "we-ll-talk",
       "nombre": "We'll Talk",
       "identidad": true,
-      "redes": [],
+      "redes": [
+        {
+          "red": "instagram",
+          "texto": "@welltalkcr",
+          "url": "https://www.instagram.com/welltalkcr/"
+        }
+      ],
       "descripcion": "Clases de inglés y español para adultos en Costa Rica.",
       "concepto": "",
       "lema": "",
