@@ -1,17 +1,6 @@
 window.GALERIA = {
-  "actualizado": "2026-10-15T01:24:26.658Z",
+  "actualizado": "2026-10-15T01:31:56.684Z",
   "reels": [
-    {
-      "id": "antes-del-si-173381",
-      "titulo": "Antes del sí",
-      "cliente": "Ruá",
-      "fecha": "2026-10-15T01:23:04.076Z",
-      "video": "media/reels/antes-del-si-173381.mp4",
-      "portada": "media/reels/antes-del-si-173381.jpg",
-      "w": 540,
-      "h": 960,
-      "dur": 34
-    },
     {
       "id": "3-momentos-34d789",
       "titulo": "3 momentos",
@@ -44,6 +33,30 @@ window.GALERIA = {
       "w": 720,
       "h": 1280,
       "dur": 49
+    }
+  ],
+  "motion": [
+    {
+      "id": "hecho-para-tu-negocio-59b2f7",
+      "titulo": "Hecho para tu negocio",
+      "cliente": "Diwo",
+      "fecha": "2026-10-15T01:26:27.874Z",
+      "video": "media/reels/hecho-para-tu-negocio-59b2f7.mp4",
+      "portada": "media/reels/hecho-para-tu-negocio-59b2f7.jpg",
+      "w": 720,
+      "h": 1280,
+      "dur": 30
+    },
+    {
+      "id": "antes-del-si-173381",
+      "titulo": "Antes del sí",
+      "cliente": "Ruá",
+      "fecha": "2026-10-15T01:23:04.076Z",
+      "video": "media/reels/antes-del-si-173381.mp4",
+      "portada": "media/reels/antes-del-si-173381.jpg",
+      "w": 540,
+      "h": 960,
+      "dur": 34
     }
   ],
   "afiches": [

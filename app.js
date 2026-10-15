@@ -1,14 +1,15 @@
 (() => {
-  const datos = Object.assign({ reels: [], afiches: [], logos: [] }, window.GALERIA);
+  const datos = Object.assign({ reels: [], motion: [], afiches: [], logos: [] }, window.GALERIA);
   const $ = id => document.getElementById(id);
   const estado = { tipo: 'todo', cliente: '' };
   let lista = [];   // piezas visibles, en orden, para navegar en el visor
   let actual = -1;
 
   const reels = datos.reels.map(r => ({ ...r, tipo: 'reel' }));
+  const motion = datos.motion.map(m => ({ ...m, tipo: 'motion' }));
   const afiches = datos.afiches.map(a => ({ ...a, tipo: 'afiche' }));
   const logos = datos.logos.map(l => ({ ...l, tipo: 'logo' }));
-  const clientes = [...new Set([...reels, ...afiches, ...logos].map(p => p.cliente).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'es'));
+  const clientes = [...new Set([...reels, ...motion, ...afiches, ...logos].map(p => p.cliente).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'es'));
 
   const icono = '<svg viewBox="0 0 10 12" aria-hidden="true"><path d="M0 0l10 6-10 6z"/></svg>';
   const mmss = s => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
@@ -27,11 +28,13 @@
 
   function pintarFiltros() {
     const delCliente = p => !estado.cliente || p.cliente === estado.cliente;
-    const nR = reels.filter(delCliente).length, nA = afiches.filter(delCliente).length, nL = logos.filter(delCliente).length;
+    const nR = reels.filter(delCliente).length, nM = motion.filter(delCliente).length;
+    const nA = afiches.filter(delCliente).length, nL = logos.filter(delCliente).length;
     const tipo = $('filtrosTipo');
     tipo.replaceChildren(
-      chip('Todo', nR + nA + nL, estado.tipo === 'todo', () => cambiar({ tipo: 'todo' })),
+      chip('Todo', nR + nM + nA + nL, estado.tipo === 'todo', () => cambiar({ tipo: 'todo' })),
       chip('Reels', nR, estado.tipo === 'reel', () => cambiar({ tipo: 'reel' })),
+      ...(motion.length ? [chip('Motion graphics', nM, estado.tipo === 'motion', () => cambiar({ tipo: 'motion' }))] : []),
       chip('Afiches', nA, estado.tipo === 'afiche', () => cambiar({ tipo: 'afiche' })),
       ...(logos.length ? [chip('Logos', nL, estado.tipo === 'logo', () => cambiar({ tipo: 'logo' }))] : []),
     );
@@ -49,7 +52,7 @@
     b.className = 'pieza';
     b.type = 'button';
     b.style.animationDelay = `${Math.min(i, 12) * 50}ms`;
-    b.setAttribute('aria-label', `Ver reel: ${r.titulo}`);
+    b.setAttribute('aria-label', `Ver ${r.tipo === 'motion' ? 'motion graphic' : 'reel'}: ${r.titulo}`);
     b.innerHTML = `
       <img src="${r.portada}" alt="" loading="lazy" width="${r.w}" height="${r.h}">
       <span class="duracion">${r.dur ? mmss(r.dur) : ''}</span>
@@ -88,19 +91,21 @@
     const delCliente = p => !estado.cliente || p.cliente === estado.cliente;
     const ver = t => estado.tipo === 'todo' || estado.tipo === t;
     const vR = ver('reel') ? reels.filter(delCliente) : [];
+    const vM = ver('motion') ? motion.filter(delCliente) : [];
     const vA = ver('afiche') ? afiches.filter(delCliente) : [];
     const vL = ver('logo') ? logos.filter(delCliente) : [];
-    lista = [...vR, ...vA, ...vL];
+    lista = [...vR, ...vM, ...vA, ...vL];
 
-    $('reels').replaceChildren(...vR.map((r, i) => {
-      const t = tarjetaReel(r, i); t.addEventListener('click', () => abrir(i)); return t;
+    // Cada sección abre el visor en su posición dentro de `lista`
+    const llenar = (id, piezas, tarjeta, desde) => $(id).replaceChildren(...piezas.map((p, i) => {
+      const t = tarjeta(p, i); t.addEventListener('click', () => abrir(desde + i)); return t;
     }));
-    $('afiches').replaceChildren(...vA.map((a, i) => {
-      const t = tarjetaAfiche(a, i); t.addEventListener('click', () => abrir(vR.length + i)); return t;
-    }));
-    $('logos').replaceChildren(...vL.map((l, i) => {
-      const t = tarjetaAfiche(l, i); t.addEventListener('click', () => abrir(vR.length + vA.length + i)); return t;
-    }));
+    llenar('reels', vR, tarjetaReel, 0);
+    llenar('motion', vM, tarjetaReel, vR.length);
+    llenar('afiches', vA, tarjetaAfiche, vR.length + vM.length);
+    llenar('logos', vL, tarjetaAfiche, vR.length + vM.length + vA.length);
+    $('seccionMotion').hidden = !vM.length;
+    $('cuentaMotion').textContent = vM.length;
     $('seccionReels').hidden = !vR.length;
     $('seccionAfiches').hidden = !vA.length;
     $('seccionLogos').hidden = !vL.length;
@@ -117,7 +122,7 @@
     for (const cont of [$('afiches'), $('logos')]) {
       const hueco = parseFloat(getComputedStyle(cont).getPropertyValue('--hueco')) || 16;
       cont.querySelectorAll('.pieza').forEach(el => {
-        const a = lista.find(p => p.tipo !== 'reel' && el.dataset.id === p.id);
+        const a = lista.find(p => !p.video && el.dataset.id === p.id);
         if (!a) return;
         const alto = el.getBoundingClientRect().width * a.h / a.w;
         el.style.gridRowEnd = `span ${Math.ceil((alto + hueco) / 2)}`;
@@ -142,7 +147,7 @@
     const p = lista[actual];
     const medio = $('visorMedio');
     medio.querySelector('video')?.pause();
-    if (p.tipo === 'reel') {
+    if (p.video) {
       const v = document.createElement('video');
       Object.assign(v, { src: p.video, poster: p.portada, controls: true, autoplay: true, playsInline: true, loop: true });
       medio.replaceChildren(v);

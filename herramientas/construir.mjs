@@ -214,20 +214,27 @@ async function main() {
 
   const dirReels = path.join(ORIGEN, 'Reels');
   const dirAfiches = path.join(ORIGEN, 'Afiches');
+  const dirMotion = path.join(ORIGEN, 'Motion graphics');
   const dirLogos = path.join(ORIGEN, 'Logos');
   const esImagen = f => EXT_IMAGEN.has(path.extname(f).toLowerCase());
-  const archivosReels = (await recorrer(dirReels)).filter(f => EXT_VIDEO.has(path.extname(f).toLowerCase()));
+  const esVideo = f => EXT_VIDEO.has(path.extname(f).toLowerCase());
+  const archivosReels = (await recorrer(dirReels)).filter(esVideo);
+  const archivosMotion = (await recorrer(dirMotion)).filter(esVideo);
   const archivosAfiches = (await recorrer(dirAfiches)).filter(esImagen);
   const archivosLogos = (await recorrer(dirLogos)).filter(esImagen);
 
-  console.log(`Reels: ${archivosReels.length} · Afiches: ${archivosAfiches.length} · Logos: ${archivosLogos.length}`);
-  const reels = [], afiches = [], logos = [];
-  for (const f of archivosReels) {
-    try {
-      const portada = portadaPropia(f);
-      const r = await procesarReel(await describir(f, dirReels, portada ? [portada] : []), portada);
-      if (r) reels.push(r);
-    } catch (e) { console.warn(`  ⚠ No pude procesar ${path.basename(f)}: ${e.message}`); }
+  console.log(`Reels: ${archivosReels.length} · Motion graphics: ${archivosMotion.length} · ` +
+    `Afiches: ${archivosAfiches.length} · Logos: ${archivosLogos.length}`);
+  const reels = [], motion = [], afiches = [], logos = [];
+  // Reels y motion graphics comparten procesamiento y carpeta media/reels
+  for (const [archivos, dir, destino] of [[archivosReels, dirReels, reels], [archivosMotion, dirMotion, motion]]) {
+    for (const f of archivos) {
+      try {
+        const portada = portadaPropia(f);
+        const r = await procesarReel(await describir(f, dir, portada ? [portada] : []), portada);
+        if (r) destino.push(r);
+      } catch (e) { console.warn(`  ⚠ No pude procesar ${path.basename(f)}: ${e.message}`); }
+    }
   }
   for (const f of archivosAfiches) {
     try { afiches.push(await procesarAfiche(await describir(f, dirAfiches))); }
@@ -237,24 +244,26 @@ async function main() {
     try { logos.push(await procesarLogo(await describir(f, dirLogos))); }
     catch (e) { console.warn(`  ⚠ No pude procesar ${path.basename(f)}: ${e.message}`); }
   }
-  reels.sort(porFecha); afiches.sort(porFecha); logos.sort(porFecha);
-  await limpiar('reels', new Set(reels.map(r => r.id)));
+  reels.sort(porFecha); motion.sort(porFecha); afiches.sort(porFecha); logos.sort(porFecha);
+  await limpiar('reels', new Set([...reels, ...motion].map(r => r.id)));
   await limpiar('afiches', new Set(afiches.map(a => a.id)));
   await limpiar('logos', new Set(logos.map(l => l.id)));
 
   const datos = { actualizado: new Date().toISOString(),
-    reels: reels.map(sinOrden), afiches: afiches.map(sinOrden), logos: logos.map(sinOrden) };
+    reels: reels.map(sinOrden), motion: motion.map(sinOrden),
+    afiches: afiches.map(sinOrden), logos: logos.map(sinOrden) };
   await mkdir(path.join(RAIZ, 'data'), { recursive: true });
   await writeFile(path.join(RAIZ, 'data', 'galeria.js'),
     `window.GALERIA = ${JSON.stringify(datos, null, 2)};\n`, 'utf8');
-  console.log(`Listo: ${reels.length} reels, ${afiches.length} afiches y ${logos.length} logos.`);
+  console.log(`Listo: ${reels.length} reels, ${motion.length} motion graphics, ` +
+    `${afiches.length} afiches y ${logos.length} logos.`);
 
   if (PUBLICAR) {
     const git = (...a) => spawnSync('git', a, { cwd: RAIZ, encoding: 'utf8', stdio: 'inherit' });
     git('add', '-A');
     const sinCambios = spawnSync('git', ['diff', '--cached', '--quiet'], { cwd: RAIZ }).status === 0;
     if (sinCambios) { console.log('No hay cambios para publicar.'); return; }
-    git('commit', '-m', `Galería: ${reels.length} reels, ${afiches.length} afiches, ${logos.length} logos`);
+    git('commit', '-m', `Galería: ${reels.length} reels, ${motion.length} motion, ${afiches.length} afiches, ${logos.length} logos`);
     if (git('push').status !== 0) throw new Error('No se pudo subir a GitHub.');
     console.log('Publicado. La página se actualiza en 1–2 minutos.');
   }
