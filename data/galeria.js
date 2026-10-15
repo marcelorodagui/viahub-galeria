@@ -1,5 +1,5 @@
 window.GALERIA = {
-  "actualizado": "2026-10-15T02:00:40.733Z",
+  "actualizado": "2026-10-15T02:01:21.271Z",
   "sitio": {
     "lema": "Tráfico relevante",
     "redes": []
@@ -510,8 +510,8 @@ window.GALERIA = {
       "redes": [
         {
           "red": "instagram",
-          "texto": "@quirodei",
-          "url": "https://www.instagram.com/quirodei/"
+          "texto": "@quiro.dei",
+          "url": "https://www.instagram.com/quiro.dei/"
         },
         {
           "red": "web",
