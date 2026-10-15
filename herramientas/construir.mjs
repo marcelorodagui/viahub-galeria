@@ -82,6 +82,7 @@ function titulo(archivo) {
   let t = path.parse(archivo).name;
   if (t.includes('·')) t = t.split('·').pop();
   t = t.replace(/^\s*\d+\s*[-_.)]\s*/, '').replace(/_+/g, ' ').replace(/\s+/g, ' ').trim();
+  if (/^[\w-]+(\.[a-z]{2,})+$/i.test(t)) return t.toLowerCase(); // un dominio (quirodei.com) queda tal cual
   return t.charAt(0).toUpperCase() + t.slice(1);
 }
 

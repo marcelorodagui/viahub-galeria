@@ -1,5 +1,5 @@
 window.GALERIA = {
-  "actualizado": "2026-10-15T01:52:32.694Z",
+  "actualizado": "2026-10-15T01:54:47.212Z",
   "sitio": {
     "lema": "Tráfico relevante",
     "redes": []
@@ -477,8 +477,14 @@ window.GALERIA = {
       "slug": "quirodei",
       "nombre": "QuiroDei",
       "identidad": true,
-      "redes": [],
-      "descripcion": "Clínica quiropráctica.",
+      "redes": [
+        {
+          "red": "web",
+          "texto": "quirodei.com",
+          "url": "https://quirodei.com"
+        }
+      ],
+      "descripcion": "Clínica quiropráctica de la Dra. Deilyn Solano Bonilla. Identidad, sitio web y contenido para redes.",
       "concepto": "",
       "lema": "",
       "colores": [
@@ -540,6 +546,20 @@ window.GALERIA = {
               "h": 1200,
               "oscuro": false,
               "titulo": "Horizontal"
+            }
+          ]
+        },
+        {
+          "titulo": "Sitio web",
+          "piezas": [
+            {
+              "id": "sitio-web-quirodei-com-5cb507",
+              "imagen": "media/marcas/quirodei/sitio-web-quirodei-com-5cb507.webp",
+              "mini": "media/marcas/quirodei/sitio-web-quirodei-com-5cb507-mini.webp",
+              "w": 1800,
+              "h": 1125,
+              "oscuro": false,
+              "titulo": "quirodei.com"
             }
           ]
         }

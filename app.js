@@ -218,8 +218,9 @@
     const propias = piezas.filter(p => p.cliente === m.clave);
     let n = 0;
     const pasos = [
-      ...m.pasos.map(p => ({ titulo: p.titulo, html: `<div class="paso-piezas">${p.piezas.map(x =>
-        `<button type="button" class="paso-pieza" data-i="${n++}" style="aspect-ratio:${x.w}/${x.h}" aria-label="Ampliar ${esc(x.titulo)}">
+      // Los pasos "Sitio web…" se muestran dentro de un marco de navegador
+      ...m.pasos.map(p => ({ titulo: p.titulo, html: `<div class="paso-piezas ${/^sitio/i.test(p.titulo) ? 'sitio' : ''}">${p.piezas.map(x =>
+        `<button type="button" class="paso-pieza" data-i="${n++}" ${/^sitio/i.test(p.titulo) ? `data-url="${esc(x.titulo)}"` : `style="aspect-ratio:${x.w}/${x.h}"`} aria-label="Ampliar ${esc(x.titulo)}">
            <img src="${x.mini}" alt="${esc(x.titulo)}" loading="lazy"><span>${esc(x.titulo)}</span></button>`).join('')}</div>` })),
       ...(m.colores.length ? [{ titulo: 'Colores', html: `<div class="paleta">${m.colores.map(c =>
         `<button type="button" class="color" data-hex="${c.hex}" aria-label="Copiar ${esc(c.nombre)} ${c.hex}">

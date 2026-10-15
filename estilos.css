@@ -346,6 +346,25 @@ main { max-width: 1280px; margin: 0 auto; padding: 8px 16px 40px; }
   font-size: 11.5px; font-weight: 500;
 }
 
+/* Marco de navegador para capturas de sitios web */
+.paso-piezas.sitio { grid-template-columns: 1fr; max-width: 860px; }
+.paso-piezas.sitio .paso-pieza {
+  padding-top: 34px; background: #e8ebee; border-radius: 12px;
+  box-shadow: 0 24px 60px -28px rgba(0, 0, 0, .7);
+}
+.paso-piezas.sitio .paso-pieza::before {
+  content: ''; position: absolute; top: 12px; left: 14px;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: #ff5f57; box-shadow: 16px 0 #febc2e, 32px 0 #28c840;
+}
+.paso-piezas.sitio .paso-pieza::after {
+  content: attr(data-url); position: absolute; top: 7px; left: 50%; transform: translateX(-50%);
+  width: min(60%, 360px); height: 20px; border-radius: 6px; background: #fff;
+  font-size: 11px; line-height: 20px; color: #4a5560; text-align: center;
+}
+.paso-piezas.sitio .paso-pieza img { height: auto; border-radius: 0 0 12px 12px; }
+.paso-piezas.sitio .paso-pieza span { display: none; }
+
 .paleta { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; }
 .color {
   display: grid; gap: 2px; padding: 0 0 12px; border: 0; cursor: copy; text-align: left;
