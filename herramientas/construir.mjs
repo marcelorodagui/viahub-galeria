@@ -274,16 +274,29 @@ async function procesarMarca(dirMarca) {
     }
     if (piezas.length) pasos.push({ titulo: sinNumero(nombre), piezas });
   }
-  // Portada de la tarjeta: la primera imagen clara del paso de logotipo (o la primera que haya)
+  // Portada de la tarjeta: una imagen "portada…" en la raíz de la marca; si no hay, la primera
+  // imagen clara del paso de logotipo (o la primera que haya).
   const todas = pasos.flatMap(p => p.piezas);
-  const pasoLogo = pasos.find(p => /logotipo/i.test(p.titulo) && !/lema/i.test(p.titulo)) ?? pasos[0];
-  const portada = pasoLogo?.piezas.find(p => !p.oscuro) ?? pasoLogo?.piezas[0] ?? todas[0] ?? null;
-  console.log(`  ◆ ${carpeta}: ${pasos.length} pasos, ${todas.length} imágenes`);
+  const archivoPortada = (await readdir(dirMarca)).find(f => /^portada/i.test(f) && EXT_IMAGEN.has(path.extname(f).toLowerCase()));
+  let portada = null;
+  if (archivoPortada) {
+    const f = path.join(dirMarca, archivoPortada);
+    const st = await stat(f);
+    const huella = crypto.createHash('sha1').update(`${archivoPortada}|${st.size}|${st.mtimeMs}|${fondos.claro}|${fondos.oscuro}`).digest('hex').slice(0, 6);
+    portada = await procesarImagenMarca(f, `portada-${huella}`, sal, fondos);
+    todas.push(portada);
+  } else {
+    const pasoLogo = pasos.find(p => /logotipo/i.test(p.titulo) && !/lema/i.test(p.titulo)) ?? pasos[0];
+    portada = pasoLogo?.piezas.find(p => !p.oscuro) ?? pasoLogo?.piezas[0] ?? todas[0] ?? null;
+  }
+  // "identidad: no" = marca a la que Vía Hub le hace contenido pero no diseñó su identidad
+  const identidad = !/^(no|false|0)$/i.test(d.identidad || '');
+  console.log(`  ◆ ${carpeta}: ${identidad ? `${pasos.length} pasos de identidad` : 'solo contenido'}, ${todas.length} imágenes`);
   return {
-    clave: carpeta, slug: sal, nombre: d.nombre || carpeta, redes: redes(d),
+    clave: carpeta, slug: sal, nombre: d.nombre || carpeta, identidad, redes: redes(d),
     descripcion: d.descripcion || '', concepto: d.concepto || '', lema: d.lema || '',
-    colores: colores(d.colores), tipografia: d.tipografia || '', fondos,
-    portada, pasos, _ids: todas.map(p => p.id),
+    colores: identidad ? colores(d.colores) : [], tipografia: identidad ? d.tipografia || '' : '', fondos,
+    portada, pasos: identidad ? pasos : [], _ids: todas.map(p => p.id),
   };
 }
 
@@ -296,6 +309,18 @@ async function limpiar(subdir, idsVigentes) {
     const id = e.name.replace(/(-mini)?\.(mp4|jpg|webp)$/, '');
     if (!idsVigentes.has(id)) { await rm(ruta); console.log(`  🗑  quitado ${e.name}`); }
   }
+}
+
+// Agrega ?v=<huella> a estilos.css, app.js y data/galeria.js en index.html para que el
+// navegador no use una versión vieja guardada en caché después de publicar.
+async function versionarRecursos() {
+  const indice = path.join(RAIZ, 'index.html');
+  let html = await readFile(indice, 'utf8');
+  for (const recurso of ['estilos.css', 'app.js', 'data/galeria.js']) {
+    const huella = crypto.createHash('sha1').update(await readFile(path.join(RAIZ, recurso))).digest('hex').slice(0, 8);
+    html = html.replace(new RegExp(`(["'])${recurso.replace('.', '\\.')}(\\?v=[0-9a-f]+)?\\1`), `$1${recurso}?v=${huella}$1`);
+  }
+  await writeFile(indice, html, 'utf8');
 }
 
 // Más reciente primero; a igual fecha, por nombre de archivo (97 antes que 100).
@@ -371,6 +396,7 @@ async function main() {
   await mkdir(path.join(RAIZ, 'data'), { recursive: true });
   await writeFile(path.join(RAIZ, 'data', 'galeria.js'),
     `window.GALERIA = ${JSON.stringify(datos, null, 2)};\n`, 'utf8');
+  await versionarRecursos();
   const resumen = `${reels.length} reels, ${motion.length} motion graphics, ${afiches.length} afiches y ${marcas.length} marcas`;
   console.log(`Listo: ${resumen}.`);
 

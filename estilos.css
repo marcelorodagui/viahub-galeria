@@ -294,8 +294,8 @@ main { max-width: 1280px; margin: 0 auto; padding: 8px 16px 40px; }
   cursor: pointer; font-size: 16px;
 }
 .caso-cerrar:hover { background: rgba(11, 195, 196, .35); }
-.caso-hero { display: grid; place-items: center; aspect-ratio: 16 / 7; overflow: hidden; }
-.caso-hero img { width: 100%; height: 100%; object-fit: contain; }
+.caso-hero { position: relative; aspect-ratio: 16 / 7; overflow: hidden; }
+.caso-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
 .caso-cuerpo { padding: 34px clamp(16px, 5vw, 56px) 64px; }
 .caso-etiqueta { margin: 0 0 6px; font-size: 11.5px; letter-spacing: .24em; text-transform: uppercase; color: var(--turquesa); font-weight: 600; }
 .caso-cuerpo h2 { margin: 0; font-size: clamp(34px, 6vw, 54px); font-weight: 800; line-height: 1.05; }

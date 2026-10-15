@@ -1,5 +1,5 @@
 window.GALERIA = {
-  "actualizado": "2026-10-15T01:47:47.948Z",
+  "actualizado": "2026-10-15T01:52:32.694Z",
   "sitio": {
     "lema": "Tráfico relevante",
     "redes": []
@@ -282,6 +282,7 @@ window.GALERIA = {
       "clave": "Diwo",
       "slug": "diwo",
       "nombre": "Dìwö",
+      "identidad": true,
       "redes": [],
       "descripcion": "Programador de publicaciones para Instagram y Facebook, hecho para pymes.",
       "concepto": "Dìwö significa \"sol\" en bribri. El símbolo es un reloj de sol: el sol más el tiempo, que es justo lo que hace la app, programar. Evita a propósito los recursos típicos de los logos hechos con IA (destellos, rayos, degradados) y respeta la ortografía bribri de la palabra.",
@@ -475,6 +476,7 @@ window.GALERIA = {
       "clave": "QuiroDei",
       "slug": "quirodei",
       "nombre": "QuiroDei",
+      "identidad": true,
       "redes": [],
       "descripcion": "Clínica quiropráctica.",
       "concepto": "",
@@ -547,6 +549,7 @@ window.GALERIA = {
       "clave": "Ruá",
       "slug": "rua",
       "nombre": "Ruá",
+      "identidad": false,
       "redes": [
         {
           "red": "instagram",
@@ -557,55 +560,28 @@ window.GALERIA = {
       "descripcion": "Música en vivo para bodas en Costa Rica.",
       "concepto": "",
       "lema": "Música en vivo · Costa Rica",
-      "colores": [
-        {
-          "nombre": "Cobre",
-          "hex": "#C38D6E"
-        },
-        {
-          "nombre": "Marfil",
-          "hex": "#F3ECE4"
-        },
-        {
-          "nombre": "Noche",
-          "hex": "#140E0B"
-        }
-      ],
+      "colores": [],
       "tipografia": "",
       "fondos": {
         "claro": "#F3ECE4",
         "oscuro": "#140E0B"
       },
       "portada": {
-        "id": "logotipo-logotipo-oscuro-f5c653",
-        "imagen": "media/marcas/rua/logotipo-logotipo-oscuro-f5c653.webp",
-        "mini": "media/marcas/rua/logotipo-logotipo-oscuro-f5c653-mini.webp",
+        "id": "portada-6020d8",
+        "imagen": "media/marcas/rua/portada-6020d8.webp",
+        "mini": "media/marcas/rua/portada-6020d8-mini.webp",
         "w": 1600,
         "h": 1200,
         "oscuro": true,
-        "titulo": "Logotipo · fondo oscuro"
+        "titulo": "Portada · fondo oscuro"
       },
-      "pasos": [
-        {
-          "titulo": "Logotipo",
-          "piezas": [
-            {
-              "id": "logotipo-logotipo-oscuro-f5c653",
-              "imagen": "media/marcas/rua/logotipo-logotipo-oscuro-f5c653.webp",
-              "mini": "media/marcas/rua/logotipo-logotipo-oscuro-f5c653-mini.webp",
-              "w": 1600,
-              "h": 1200,
-              "oscuro": true,
-              "titulo": "Logotipo · fondo oscuro"
-            }
-          ]
-        }
-      ]
+      "pasos": []
     },
     {
       "clave": "We'll Talk",
       "slug": "we-ll-talk",
       "nombre": "We'll Talk",
+      "identidad": true,
       "redes": [],
       "descripcion": "Clases de inglés y español para adultos en Costa Rica.",
       "concepto": "",

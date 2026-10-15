@@ -126,7 +126,7 @@
     art.style.animationDelay = `${Math.min(i, 12) * 60}ms`;
     const portada = m.portada;
     const fondo = portada?.oscuro ? m.fondos.oscuro : m.fondos.claro;
-    const meta = [`${m.pasos.length} ${m.pasos.length === 1 ? 'paso' : 'pasos'} de identidad`, ...contarPiezas(m.clave)].join(' · ');
+    const meta = [m.identidad ? 'Identidad de marca' : 'Contenido para redes', ...contarPiezas(m.clave)].join(' · ');
     const ig = m.redes.find(r => r.red === 'instagram');
     art.innerHTML = `
       <div class="marca-portada" style="background:${esc(fondo)}">${portada ? `<img src="${portada.mini}" alt="" loading="lazy">` : ''}</div>
@@ -238,7 +238,7 @@
         ${portada ? `<img src="${portada.imagen}" alt="${esc(m.nombre)}">` : ''}
       </header>
       <div class="caso-cuerpo">
-        <p class="caso-etiqueta">Identidad de marca · Vía Hub Studio</p>
+        <p class="caso-etiqueta">${m.identidad ? 'Identidad de marca' : 'Contenido para redes'} · Vía Hub Studio</p>
         <h2 id="casoNombre">${esc(m.nombre)}</h2>
         ${m.lema ? `<p class="caso-lema">“${esc(m.lema)}”</p>` : ''}
         ${m.descripcion ? `<p class="caso-desc">${esc(m.descripcion)}</p>` : ''}
@@ -247,7 +247,7 @@
           ${propias.length ? `<button type="button" class="boton secundario" id="casoVerPiezas">${propias.length === 1 ? 'Ver su pieza' : `Ver sus ${propias.length} piezas`}</button>` : ''}
         </div>
         ${m.concepto ? `<section class="caso-bloque concepto"><h3>Concepto</h3><p>${esc(m.concepto)}</p></section>` : ''}
-        ${pasos.length ? `<section class="caso-bloque"><h3>Proceso</h3><ol class="pasos">${pasos.map((p, i) => `
+        ${pasos.length ? `<section class="caso-bloque"><h3>Proceso de identidad</h3><ol class="pasos">${pasos.map((p, i) => `
           <li class="paso"><div class="paso-cabeza"><span class="paso-num">${String(i + 1).padStart(2, '0')}</span><h4>${esc(p.titulo)}</h4></div>${p.html}</li>`).join('')}
         </ol></section>` : ''}
         ${propias.length ? `<section class="caso-bloque"><h3>Aplicaciones en redes</h3><div class="rejilla-afiches caso-piezas" id="casoPiezas"></div></section>` : ''}
