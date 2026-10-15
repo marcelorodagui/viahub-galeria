@@ -1,10 +1,21 @@
 window.GALERIA = {
-  "actualizado": "2026-10-15T02:01:21.271Z",
+  "actualizado": "2026-10-15T03:32:57.847Z",
   "sitio": {
     "lema": "Tráfico relevante",
     "redes": []
   },
   "reels": [
+    {
+      "id": "tres-preguntas-589cb1",
+      "titulo": "Tres preguntas",
+      "cliente": "QuiroDei",
+      "fecha": "2026-10-13T02:45:16.533Z",
+      "video": "media/reels/tres-preguntas-589cb1.mp4",
+      "portada": "media/reels/tres-preguntas-589cb1.jpg",
+      "w": 720,
+      "h": 1280,
+      "dur": 33
+    },
     {
       "id": "3-momentos-34d789",
       "titulo": "3 momentos",
