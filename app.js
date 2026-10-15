@@ -1,5 +1,5 @@
 (() => {
-  const datos = window.GALERIA || { reels: [], afiches: [] };
+  const datos = Object.assign({ reels: [], afiches: [], logos: [] }, window.GALERIA);
   const $ = id => document.getElementById(id);
   const estado = { tipo: 'todo', cliente: '' };
   let lista = [];   // piezas visibles, en orden, para navegar en el visor
@@ -7,7 +7,8 @@
 
   const reels = datos.reels.map(r => ({ ...r, tipo: 'reel' }));
   const afiches = datos.afiches.map(a => ({ ...a, tipo: 'afiche' }));
-  const clientes = [...new Set([...reels, ...afiches].map(p => p.cliente).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'es'));
+  const logos = datos.logos.map(l => ({ ...l, tipo: 'logo' }));
+  const clientes = [...new Set([...reels, ...afiches, ...logos].map(p => p.cliente).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'es'));
 
   const icono = '<svg viewBox="0 0 10 12" aria-hidden="true"><path d="M0 0l10 6-10 6z"/></svg>';
   const mmss = s => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
@@ -26,12 +27,13 @@
 
   function pintarFiltros() {
     const delCliente = p => !estado.cliente || p.cliente === estado.cliente;
-    const nR = reels.filter(delCliente).length, nA = afiches.filter(delCliente).length;
+    const nR = reels.filter(delCliente).length, nA = afiches.filter(delCliente).length, nL = logos.filter(delCliente).length;
     const tipo = $('filtrosTipo');
     tipo.replaceChildren(
-      chip('Todo', nR + nA, estado.tipo === 'todo', () => cambiar({ tipo: 'todo' })),
+      chip('Todo', nR + nA + nL, estado.tipo === 'todo', () => cambiar({ tipo: 'todo' })),
       chip('Reels', nR, estado.tipo === 'reel', () => cambiar({ tipo: 'reel' })),
       chip('Afiches', nA, estado.tipo === 'afiche', () => cambiar({ tipo: 'afiche' })),
+      ...(logos.length ? [chip('Logos', nL, estado.tipo === 'logo', () => cambiar({ tipo: 'logo' }))] : []),
     );
     const cli = $('filtrosCliente');
     if (clientes.length > 1) {
@@ -74,7 +76,7 @@
     b.className = 'pieza';
     b.type = 'button';
     b.style.animationDelay = `${Math.min(i, 12) * 50}ms`;
-    b.setAttribute('aria-label', `Ver afiche: ${a.titulo}`);
+    b.setAttribute('aria-label', `Ver ${a.tipo}: ${a.titulo}`);
     b.dataset.id = a.id;
     b.innerHTML = `
       <img src="${a.mini}" alt="${esc(a.titulo)}" loading="lazy" width="${a.w}" height="${a.h}" style="aspect-ratio:${a.w}/${a.h}">
@@ -84,9 +86,11 @@
 
   function pintar() {
     const delCliente = p => !estado.cliente || p.cliente === estado.cliente;
-    const vR = estado.tipo === 'afiche' ? [] : reels.filter(delCliente);
-    const vA = estado.tipo === 'reel' ? [] : afiches.filter(delCliente);
-    lista = [...vR, ...vA];
+    const ver = t => estado.tipo === 'todo' || estado.tipo === t;
+    const vR = ver('reel') ? reels.filter(delCliente) : [];
+    const vA = ver('afiche') ? afiches.filter(delCliente) : [];
+    const vL = ver('logo') ? logos.filter(delCliente) : [];
+    lista = [...vR, ...vA, ...vL];
 
     $('reels').replaceChildren(...vR.map((r, i) => {
       const t = tarjetaReel(r, i); t.addEventListener('click', () => abrir(i)); return t;
@@ -94,28 +98,35 @@
     $('afiches').replaceChildren(...vA.map((a, i) => {
       const t = tarjetaAfiche(a, i); t.addEventListener('click', () => abrir(vR.length + i)); return t;
     }));
+    $('logos').replaceChildren(...vL.map((l, i) => {
+      const t = tarjetaAfiche(l, i); t.addEventListener('click', () => abrir(vR.length + vA.length + i)); return t;
+    }));
     $('seccionReels').hidden = !vR.length;
     $('seccionAfiches').hidden = !vA.length;
+    $('seccionLogos').hidden = !vL.length;
     $('cuentaReels').textContent = vR.length;
     $('cuentaAfiches').textContent = vA.length;
+    $('cuentaLogos').textContent = vL.length;
     $('vacio').hidden = lista.length > 0;
     pintarFiltros();
     acomodarMosaico();
   }
 
-  // Cada afiche ocupa las filas de 2px que correspondan a su proporción + el hueco.
+  // Cada afiche/logo ocupa las filas de 2px que correspondan a su proporción + el hueco.
   function acomodarMosaico() {
-    const cont = $('afiches');
-    const hueco = parseFloat(getComputedStyle(cont).getPropertyValue('--hueco')) || 16;
-    const piezas = cont.querySelectorAll('.pieza');
-    piezas.forEach((el, i) => {
-      const a = lista.find(p => p.tipo === 'afiche' && el.dataset.id === p.id);
-      if (!a) return;
-      const alto = el.getBoundingClientRect().width * a.h / a.w;
-      el.style.gridRowEnd = `span ${Math.ceil((alto + hueco) / 2)}`;
-    });
+    for (const cont of [$('afiches'), $('logos')]) {
+      const hueco = parseFloat(getComputedStyle(cont).getPropertyValue('--hueco')) || 16;
+      cont.querySelectorAll('.pieza').forEach(el => {
+        const a = lista.find(p => p.tipo !== 'reel' && el.dataset.id === p.id);
+        if (!a) return;
+        const alto = el.getBoundingClientRect().width * a.h / a.w;
+        el.style.gridRowEnd = `span ${Math.ceil((alto + hueco) / 2)}`;
+      });
+    }
   }
-  new ResizeObserver(acomodarMosaico).observe($('afiches'));
+  const observador = new ResizeObserver(acomodarMosaico);
+  observador.observe($('afiches'));
+  observador.observe($('logos'));
 
   function cambiar(cambios) {
     Object.assign(estado, cambios);

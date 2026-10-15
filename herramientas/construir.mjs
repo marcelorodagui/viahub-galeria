@@ -101,7 +101,7 @@ async function describir(archivo, carpetaTipo, extra = []) {
   let huella = `${rel}|${st.size}|${st.mtimeMs}`;
   for (const f of extra) { const s = await stat(f); huella += `|${s.size}|${s.mtimeMs}`; }
   const id = `${slug(path.parse(rel).name)}-${crypto.createHash('sha1').update(huella).digest('hex').slice(0, 6)}`;
-  return { archivo, id, cliente, titulo: titulo(archivo), fecha: st.mtime.toISOString() };
+  return { archivo, id, cliente, titulo: titulo(archivo), fecha: st.mtime.toISOString(), _orden: rel };
 }
 
 async function procesarReel(p, portadaOrigen) {
@@ -134,7 +134,7 @@ async function procesarReel(p, portadaOrigen) {
     await rm(video, { force: true }); await rm(portada, { force: true });
     return null;
   }
-  return { id: p.id, titulo: p.titulo, cliente: p.cliente, fecha: p.fecha,
+  return { id: p.id, titulo: p.titulo, cliente: p.cliente, fecha: p.fecha, _orden: p._orden,
     video: `media/reels/${p.id}.mp4`, portada: `media/reels/${p.id}.jpg`,
     w: final.w, h: final.h, dur: Math.round(final.dur) };
 }
@@ -155,8 +155,41 @@ async function procesarAfiche(p) {
       '-c:v', 'libwebp', '-quality', '80', mini]);
   }
   const { w, h } = sondear(grande);
-  return { id: p.id, titulo: p.titulo, cliente: p.cliente, fecha: p.fecha,
+  return { id: p.id, titulo: p.titulo, cliente: p.cliente, fecha: p.fecha, _orden: p._orden,
     imagen: `media/afiches/${p.id}.webp`, mini: `media/afiches/${p.id}-mini.webp`, w, h };
+}
+
+function tieneTransparencia(archivo) {
+  const fmt = correr(FFPROBE, ['-v', 'error', '-select_streams', 'v:0', '-show_entries', 'stream=pix_fmt',
+    '-of', 'csv=p=0', archivo]).trim();
+  return /a|pal8/.test(fmt.replace('gray', ''));
+}
+
+// Logos: los transparentes se centran sobre un lienzo 4:3 (claro por defecto, oscuro si el
+// nombre dice "oscuro"); los que ya traen fondo se dejan tal cual.
+async function procesarLogo(p) {
+  const dir = path.join(RAIZ, 'media', 'logos');
+  const grande = path.join(dir, `${p.id}.webp`);
+  const mini = path.join(dir, `${p.id}-mini.webp`);
+  if (!existsSync(grande)) {
+    console.log(`  ✳  ${p.titulo}`);
+    if (tieneTransparencia(p.archivo)) {
+      const fondo = /oscuro/i.test(path.basename(p.archivo)) ? '0x15191b' : '0xf4f1ea';
+      correr(FFMPEG, ['-y', '-v', 'error', '-f', 'lavfi', '-i', `color=c=${fondo}:s=1600x1200`, '-i', p.archivo,
+        '-filter_complex', '[1]scale=w=1120:h=760:force_original_aspect_ratio=decrease[l];[0][l]overlay=(W-w)/2:(H-h)/2:format=auto',
+        '-frames:v', '1', '-c:v', 'libwebp', '-quality', '90', grande]);
+    } else {
+      correr(FFMPEG, ['-y', '-v', 'error', '-i', p.archivo, '-frames:v', '1',
+        '-vf', 'scale=w=1600:h=1600:force_original_aspect_ratio=decrease', '-c:v', 'libwebp', '-quality', '90', grande]);
+    }
+  }
+  if (!existsSync(mini)) {
+    correr(FFMPEG, ['-y', '-v', 'error', '-i', grande, '-frames:v', '1',
+      '-vf', 'scale=w=720:h=720:force_original_aspect_ratio=decrease', '-c:v', 'libwebp', '-quality', '82', mini]);
+  }
+  const { w, h } = sondear(grande);
+  return { id: p.id, titulo: p.titulo.replace(/\s*oscuro\s*/i, ' ').trim(), cliente: p.cliente, fecha: p.fecha, _orden: p._orden,
+    imagen: `media/logos/${p.id}.webp`, mini: `media/logos/${p.id}-mini.webp`, w, h };
 }
 
 async function limpiar(subdir, idsVigentes) {
@@ -168,21 +201,27 @@ async function limpiar(subdir, idsVigentes) {
   }
 }
 
-const porFecha = (a, b) => b.fecha.localeCompare(a.fecha) || a.titulo.localeCompare(b.titulo, 'es');
+// Más reciente primero; a igual fecha, por nombre de archivo (97 antes que 100).
+const porFecha = (a, b) => b.fecha.localeCompare(a.fecha) || a._orden.localeCompare(b._orden, 'es', { numeric: true });
+const sinOrden = ({ _orden, ...resto }) => resto;
 
 async function main() {
   console.log(`Origen: ${ORIGEN}`);
   if (!existsSync(ORIGEN)) throw new Error('No existe la carpeta de origen.');
   await mkdir(path.join(RAIZ, 'media', 'reels'), { recursive: true });
   await mkdir(path.join(RAIZ, 'media', 'afiches'), { recursive: true });
+  await mkdir(path.join(RAIZ, 'media', 'logos'), { recursive: true });
 
   const dirReels = path.join(ORIGEN, 'Reels');
   const dirAfiches = path.join(ORIGEN, 'Afiches');
+  const dirLogos = path.join(ORIGEN, 'Logos');
+  const esImagen = f => EXT_IMAGEN.has(path.extname(f).toLowerCase());
   const archivosReels = (await recorrer(dirReels)).filter(f => EXT_VIDEO.has(path.extname(f).toLowerCase()));
-  const archivosAfiches = (await recorrer(dirAfiches)).filter(f => EXT_IMAGEN.has(path.extname(f).toLowerCase()));
+  const archivosAfiches = (await recorrer(dirAfiches)).filter(esImagen);
+  const archivosLogos = (await recorrer(dirLogos)).filter(esImagen);
 
-  console.log(`Reels: ${archivosReels.length} · Afiches: ${archivosAfiches.length}`);
-  const reels = [], afiches = [];
+  console.log(`Reels: ${archivosReels.length} · Afiches: ${archivosAfiches.length} · Logos: ${archivosLogos.length}`);
+  const reels = [], afiches = [], logos = [];
   for (const f of archivosReels) {
     try {
       const portada = portadaPropia(f);
@@ -194,22 +233,28 @@ async function main() {
     try { afiches.push(await procesarAfiche(await describir(f, dirAfiches))); }
     catch (e) { console.warn(`  ⚠ No pude procesar ${path.basename(f)}: ${e.message}`); }
   }
-  reels.sort(porFecha); afiches.sort(porFecha);
+  for (const f of archivosLogos) {
+    try { logos.push(await procesarLogo(await describir(f, dirLogos))); }
+    catch (e) { console.warn(`  ⚠ No pude procesar ${path.basename(f)}: ${e.message}`); }
+  }
+  reels.sort(porFecha); afiches.sort(porFecha); logos.sort(porFecha);
   await limpiar('reels', new Set(reels.map(r => r.id)));
   await limpiar('afiches', new Set(afiches.map(a => a.id)));
+  await limpiar('logos', new Set(logos.map(l => l.id)));
 
-  const datos = { actualizado: new Date().toISOString(), reels, afiches };
+  const datos = { actualizado: new Date().toISOString(),
+    reels: reels.map(sinOrden), afiches: afiches.map(sinOrden), logos: logos.map(sinOrden) };
   await mkdir(path.join(RAIZ, 'data'), { recursive: true });
   await writeFile(path.join(RAIZ, 'data', 'galeria.js'),
     `window.GALERIA = ${JSON.stringify(datos, null, 2)};\n`, 'utf8');
-  console.log(`Listo: ${reels.length} reels y ${afiches.length} afiches.`);
+  console.log(`Listo: ${reels.length} reels, ${afiches.length} afiches y ${logos.length} logos.`);
 
   if (PUBLICAR) {
     const git = (...a) => spawnSync('git', a, { cwd: RAIZ, encoding: 'utf8', stdio: 'inherit' });
     git('add', '-A');
     const sinCambios = spawnSync('git', ['diff', '--cached', '--quiet'], { cwd: RAIZ }).status === 0;
     if (sinCambios) { console.log('No hay cambios para publicar.'); return; }
-    git('commit', '-m', `Galería: ${reels.length} reels, ${afiches.length} afiches`);
+    git('commit', '-m', `Galería: ${reels.length} reels, ${afiches.length} afiches, ${logos.length} logos`);
     if (git('push').status !== 0) throw new Error('No se pudo subir a GitHub.');
     console.log('Publicado. La página se actualiza en 1–2 minutos.');
   }
