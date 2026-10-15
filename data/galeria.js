@@ -1,5 +1,9 @@
 window.GALERIA = {
-  "actualizado": "2026-10-15T01:31:56.684Z",
+  "actualizado": "2026-10-15T01:47:47.948Z",
+  "sitio": {
+    "lema": "Tráfico relevante",
+    "redes": []
+  },
   "reels": [
     {
       "id": "3-momentos-34d789",
@@ -60,6 +64,68 @@ window.GALERIA = {
     }
   ],
   "afiches": [
+    {
+      "id": "3-esto-es-lo-que-hago-todos-los-dias-ecd40c",
+      "titulo": "Esto es lo que hago todos los días",
+      "cliente": "QuiroDei",
+      "fecha": "2026-10-15T01:31:26.716Z",
+      "imagen": "media/afiches/3-esto-es-lo-que-hago-todos-los-dias-ecd40c.webp",
+      "mini": "media/afiches/3-esto-es-lo-que-hago-todos-los-dias-ecd40c-mini.webp",
+      "w": 1600,
+      "h": 2000
+    },
+    {
+      "id": "2-todo-empezo-con-una-pregunta-6a881f",
+      "titulo": "Todo empezó con una pregunta",
+      "cliente": "QuiroDei",
+      "fecha": "2026-10-15T01:31:26.695Z",
+      "imagen": "media/afiches/01-1b0f5e.webp",
+      "mini": "media/afiches/01-1b0f5e-mini.webp",
+      "w": 1600,
+      "h": 2000,
+      "laminas": [
+        {
+          "imagen": "media/afiches/01-1b0f5e.webp",
+          "mini": "media/afiches/01-1b0f5e-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/02-6f60be.webp",
+          "mini": "media/afiches/02-6f60be-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/03-9a6775.webp",
+          "mini": "media/afiches/03-9a6775-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/04-4336d8.webp",
+          "mini": "media/afiches/04-4336d8-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/05-879e03.webp",
+          "mini": "media/afiches/05-879e03-mini.webp",
+          "w": 1600,
+          "h": 2000
+        }
+      ]
+    },
+    {
+      "id": "1-la-quiropractica-cumple-131-anos-2d0673",
+      "titulo": "La quiropráctica cumple 131 años",
+      "cliente": "QuiroDei",
+      "fecha": "2026-10-15T01:31:26.656Z",
+      "imagen": "media/afiches/1-la-quiropractica-cumple-131-anos-2d0673.webp",
+      "mini": "media/afiches/1-la-quiropractica-cumple-131-anos-2d0673-mini.webp",
+      "w": 1600,
+      "h": 2000
+    },
     {
       "id": "hist-3-fechas-2027-988fe2",
       "titulo": "Fechas 2027",
@@ -211,26 +277,406 @@ window.GALERIA = {
       "h": 2000
     }
   ],
-  "logos": [
+  "marcas": [
     {
-      "id": "isotipo-87fc15",
-      "titulo": "Isotipo",
-      "cliente": "We'll Talk",
-      "fecha": "2026-07-17T23:58:30.633Z",
-      "imagen": "media/logos/isotipo-87fc15.webp",
-      "mini": "media/logos/isotipo-87fc15-mini.webp",
-      "w": 1600,
-      "h": 1600
+      "clave": "Diwo",
+      "slug": "diwo",
+      "nombre": "Dìwö",
+      "redes": [],
+      "descripcion": "Programador de publicaciones para Instagram y Facebook, hecho para pymes.",
+      "concepto": "Dìwö significa \"sol\" en bribri. El símbolo es un reloj de sol: el sol más el tiempo, que es justo lo que hace la app, programar. Evita a propósito los recursos típicos de los logos hechos con IA (destellos, rayos, degradados) y respeta la ortografía bribri de la palabra.",
+      "lema": "Cada mensaje, a su hora",
+      "colores": [
+        {
+          "nombre": "Noche índigo",
+          "hex": "#26215C"
+        },
+        {
+          "nombre": "Sol",
+          "hex": "#EF9F27"
+        },
+        {
+          "nombre": "Plato",
+          "hex": "#FAEEDA"
+        },
+        {
+          "nombre": "Borde",
+          "hex": "#BA7517"
+        },
+        {
+          "nombre": "Tinta",
+          "hex": "#16132F"
+        }
+      ],
+      "tipografia": "Lexend",
+      "fondos": {
+        "claro": "#FAEEDA",
+        "oscuro": "#26215C"
+      },
+      "portada": {
+        "id": "logotipo-horizontal-897fbc",
+        "imagen": "media/marcas/diwo/logotipo-horizontal-897fbc.webp",
+        "mini": "media/marcas/diwo/logotipo-horizontal-897fbc-mini.webp",
+        "w": 1600,
+        "h": 1200,
+        "oscuro": false,
+        "titulo": "Horizontal"
+      },
+      "pasos": [
+        {
+          "titulo": "Icono",
+          "piezas": [
+            {
+              "id": "icono-icono-d141fc",
+              "imagen": "media/marcas/diwo/icono-icono-d141fc.webp",
+              "mini": "media/marcas/diwo/icono-icono-d141fc-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": false,
+              "titulo": "Icono"
+            },
+            {
+              "id": "icono-monocromo-oscuro-1e8b0f",
+              "imagen": "media/marcas/diwo/icono-monocromo-oscuro-1e8b0f.webp",
+              "mini": "media/marcas/diwo/icono-monocromo-oscuro-1e8b0f-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": true,
+              "titulo": "Monocromo · fondo oscuro"
+            },
+            {
+              "id": "icono-simbolo-f90ce0",
+              "imagen": "media/marcas/diwo/icono-simbolo-f90ce0.webp",
+              "mini": "media/marcas/diwo/icono-simbolo-f90ce0-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": false,
+              "titulo": "Símbolo"
+            }
+          ]
+        },
+        {
+          "titulo": "Logotipo",
+          "piezas": [
+            {
+              "id": "logotipo-horizontal-oscuro-092cc2",
+              "imagen": "media/marcas/diwo/logotipo-horizontal-oscuro-092cc2.webp",
+              "mini": "media/marcas/diwo/logotipo-horizontal-oscuro-092cc2-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": true,
+              "titulo": "Horizontal · fondo oscuro"
+            },
+            {
+              "id": "logotipo-horizontal-897fbc",
+              "imagen": "media/marcas/diwo/logotipo-horizontal-897fbc.webp",
+              "mini": "media/marcas/diwo/logotipo-horizontal-897fbc-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": false,
+              "titulo": "Horizontal"
+            },
+            {
+              "id": "logotipo-vertical-oscuro-346a5f",
+              "imagen": "media/marcas/diwo/logotipo-vertical-oscuro-346a5f.webp",
+              "mini": "media/marcas/diwo/logotipo-vertical-oscuro-346a5f-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": true,
+              "titulo": "Vertical · fondo oscuro"
+            },
+            {
+              "id": "logotipo-vertical-9832b7",
+              "imagen": "media/marcas/diwo/logotipo-vertical-9832b7.webp",
+              "mini": "media/marcas/diwo/logotipo-vertical-9832b7-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": false,
+              "titulo": "Vertical"
+            }
+          ]
+        },
+        {
+          "titulo": "Logotipo con lema",
+          "piezas": [
+            {
+              "id": "logotipo-con-lema-horizontal-con-lema-8f9e75",
+              "imagen": "media/marcas/diwo/logotipo-con-lema-horizontal-con-lema-8f9e75.webp",
+              "mini": "media/marcas/diwo/logotipo-con-lema-horizontal-con-lema-8f9e75-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": false,
+              "titulo": "Horizontal con lema"
+            },
+            {
+              "id": "logotipo-con-lema-vertical-con-lema-oscuro-635b28",
+              "imagen": "media/marcas/diwo/logotipo-con-lema-vertical-con-lema-oscuro-635b28.webp",
+              "mini": "media/marcas/diwo/logotipo-con-lema-vertical-con-lema-oscuro-635b28-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": true,
+              "titulo": "Vertical con lema · fondo oscuro"
+            }
+          ]
+        },
+        {
+          "titulo": "Redes y web",
+          "piezas": [
+            {
+              "id": "redes-y-web-1-avatar-7100c3",
+              "imagen": "media/marcas/diwo/redes-y-web-1-avatar-7100c3.webp",
+              "mini": "media/marcas/diwo/redes-y-web-1-avatar-7100c3-mini.webp",
+              "w": 1800,
+              "h": 1800,
+              "oscuro": false,
+              "titulo": "Avatar"
+            },
+            {
+              "id": "redes-y-web-2-banner-fbc098",
+              "imagen": "media/marcas/diwo/redes-y-web-2-banner-fbc098.webp",
+              "mini": "media/marcas/diwo/redes-y-web-2-banner-fbc098-mini.webp",
+              "w": 1800,
+              "h": 600,
+              "oscuro": false,
+              "titulo": "Banner"
+            },
+            {
+              "id": "redes-y-web-3-portada-de-facebook-bae625",
+              "imagen": "media/marcas/diwo/redes-y-web-3-portada-de-facebook-bae625.webp",
+              "mini": "media/marcas/diwo/redes-y-web-3-portada-de-facebook-bae625-mini.webp",
+              "w": 1800,
+              "h": 685,
+              "oscuro": false,
+              "titulo": "Portada de Facebook"
+            },
+            {
+              "id": "redes-y-web-4-imagen-para-compartir-cf8dc0",
+              "imagen": "media/marcas/diwo/redes-y-web-4-imagen-para-compartir-cf8dc0.webp",
+              "mini": "media/marcas/diwo/redes-y-web-4-imagen-para-compartir-cf8dc0-mini.webp",
+              "w": 1800,
+              "h": 945,
+              "oscuro": false,
+              "titulo": "Imagen para compartir"
+            },
+            {
+              "id": "redes-y-web-5-presentacion-9aa5cd",
+              "imagen": "media/marcas/diwo/redes-y-web-5-presentacion-9aa5cd.webp",
+              "mini": "media/marcas/diwo/redes-y-web-5-presentacion-9aa5cd-mini.webp",
+              "w": 1800,
+              "h": 1013,
+              "oscuro": false,
+              "titulo": "Presentación"
+            }
+          ]
+        }
+      ]
     },
     {
-      "id": "logotipo-0b3ad8",
-      "titulo": "Logotipo",
-      "cliente": "We'll Talk",
-      "fecha": "2026-07-17T23:19:27.567Z",
-      "imagen": "media/logos/logotipo-0b3ad8.webp",
-      "mini": "media/logos/logotipo-0b3ad8-mini.webp",
-      "w": 1600,
-      "h": 1200
+      "clave": "QuiroDei",
+      "slug": "quirodei",
+      "nombre": "QuiroDei",
+      "redes": [],
+      "descripcion": "Clínica quiropráctica.",
+      "concepto": "",
+      "lema": "",
+      "colores": [
+        {
+          "nombre": "Azul",
+          "hex": "#254093"
+        },
+        {
+          "nombre": "Arena",
+          "hex": "#DFCA9F"
+        }
+      ],
+      "tipografia": "",
+      "fondos": {
+        "claro": "#FFFFFF",
+        "oscuro": "#254093"
+      },
+      "portada": {
+        "id": "logotipo-compacto-763f3a",
+        "imagen": "media/marcas/quirodei/logotipo-compacto-763f3a.webp",
+        "mini": "media/marcas/quirodei/logotipo-compacto-763f3a-mini.webp",
+        "w": 1600,
+        "h": 1200,
+        "oscuro": false,
+        "titulo": "Compacto"
+      },
+      "pasos": [
+        {
+          "titulo": "Isotipo",
+          "piezas": [
+            {
+              "id": "isotipo-isotipo-367f82",
+              "imagen": "media/marcas/quirodei/isotipo-isotipo-367f82.webp",
+              "mini": "media/marcas/quirodei/isotipo-isotipo-367f82-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": false,
+              "titulo": "Isotipo"
+            }
+          ]
+        },
+        {
+          "titulo": "Logotipo",
+          "piezas": [
+            {
+              "id": "logotipo-compacto-763f3a",
+              "imagen": "media/marcas/quirodei/logotipo-compacto-763f3a.webp",
+              "mini": "media/marcas/quirodei/logotipo-compacto-763f3a-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": false,
+              "titulo": "Compacto"
+            },
+            {
+              "id": "logotipo-horizontal-2fbc32",
+              "imagen": "media/marcas/quirodei/logotipo-horizontal-2fbc32.webp",
+              "mini": "media/marcas/quirodei/logotipo-horizontal-2fbc32-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": false,
+              "titulo": "Horizontal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "clave": "Ruá",
+      "slug": "rua",
+      "nombre": "Ruá",
+      "redes": [
+        {
+          "red": "instagram",
+          "texto": "@musicarua",
+          "url": "https://www.instagram.com/musicarua/"
+        }
+      ],
+      "descripcion": "Música en vivo para bodas en Costa Rica.",
+      "concepto": "",
+      "lema": "Música en vivo · Costa Rica",
+      "colores": [
+        {
+          "nombre": "Cobre",
+          "hex": "#C38D6E"
+        },
+        {
+          "nombre": "Marfil",
+          "hex": "#F3ECE4"
+        },
+        {
+          "nombre": "Noche",
+          "hex": "#140E0B"
+        }
+      ],
+      "tipografia": "",
+      "fondos": {
+        "claro": "#F3ECE4",
+        "oscuro": "#140E0B"
+      },
+      "portada": {
+        "id": "logotipo-logotipo-oscuro-f5c653",
+        "imagen": "media/marcas/rua/logotipo-logotipo-oscuro-f5c653.webp",
+        "mini": "media/marcas/rua/logotipo-logotipo-oscuro-f5c653-mini.webp",
+        "w": 1600,
+        "h": 1200,
+        "oscuro": true,
+        "titulo": "Logotipo · fondo oscuro"
+      },
+      "pasos": [
+        {
+          "titulo": "Logotipo",
+          "piezas": [
+            {
+              "id": "logotipo-logotipo-oscuro-f5c653",
+              "imagen": "media/marcas/rua/logotipo-logotipo-oscuro-f5c653.webp",
+              "mini": "media/marcas/rua/logotipo-logotipo-oscuro-f5c653-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": true,
+              "titulo": "Logotipo · fondo oscuro"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "clave": "We'll Talk",
+      "slug": "we-ll-talk",
+      "nombre": "We'll Talk",
+      "redes": [],
+      "descripcion": "Clases de inglés y español para adultos en Costa Rica.",
+      "concepto": "",
+      "lema": "",
+      "colores": [
+        {
+          "nombre": "Turquesa",
+          "hex": "#3CBEA9"
+        },
+        {
+          "nombre": "Coral",
+          "hex": "#F2694A"
+        },
+        {
+          "nombre": "Grafito",
+          "hex": "#5A5A5A"
+        }
+      ],
+      "tipografia": "",
+      "fondos": {
+        "claro": "#F4F1EA",
+        "oscuro": "#1E1F20"
+      },
+      "portada": {
+        "id": "logotipo-horizontal-7713d1",
+        "imagen": "media/marcas/we-ll-talk/logotipo-horizontal-7713d1.webp",
+        "mini": "media/marcas/we-ll-talk/logotipo-horizontal-7713d1-mini.webp",
+        "w": 1600,
+        "h": 1200,
+        "oscuro": false,
+        "titulo": "Horizontal"
+      },
+      "pasos": [
+        {
+          "titulo": "Isotipo",
+          "piezas": [
+            {
+              "id": "isotipo-isotipo-26feb1",
+              "imagen": "media/marcas/we-ll-talk/isotipo-isotipo-26feb1.webp",
+              "mini": "media/marcas/we-ll-talk/isotipo-isotipo-26feb1-mini.webp",
+              "w": 1800,
+              "h": 1800,
+              "oscuro": false,
+              "titulo": "Isotipo"
+            }
+          ]
+        },
+        {
+          "titulo": "Logotipo",
+          "piezas": [
+            {
+              "id": "logotipo-horizontal-7713d1",
+              "imagen": "media/marcas/we-ll-talk/logotipo-horizontal-7713d1.webp",
+              "mini": "media/marcas/we-ll-talk/logotipo-horizontal-7713d1-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": false,
+              "titulo": "Horizontal"
+            },
+            {
+              "id": "logotipo-vertical-oscuro-b86d17",
+              "imagen": "media/marcas/we-ll-talk/logotipo-vertical-oscuro-b86d17.webp",
+              "mini": "media/marcas/we-ll-talk/logotipo-vertical-oscuro-b86d17-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": true,
+              "titulo": "Vertical · fondo oscuro"
+            }
+          ]
+        }
+      ]
     }
   ]
 };

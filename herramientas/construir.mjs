@@ -3,12 +3,14 @@
 //   node herramientas/construir.mjs --publicar   → además sube los cambios a GitHub
 //
 // Carpeta de origen (por defecto "G:\Mi unidad\Vía Hub Studio\Galería web"):
-//   Reels\<Cliente opcional>\video.mp4   (+ video.png/.jpg opcional como portada)
-//   Afiches\<Cliente opcional>\imagen.png
-// El nombre de la subcarpeta se muestra como etiqueta del cliente.
+//   Reels\<Marca>\video.mp4               (+ video.png/.jpg opcional como portada)
+//   Motion graphics\<Marca>\video.mp4
+//   Afiches\<Marca>\imagen.png            (una subcarpeta con varias imágenes = carrusel)
+//   Marcas\<Marca>\datos.txt + "1 Paso"\, "2 Paso"\…   (proceso de identidad)
+// El nombre de la subcarpeta se muestra como etiqueta de la marca.
 // El título sale del nombre del archivo (lo que va después del último " · ").
 
-import { readdir, stat, mkdir, writeFile, rm } from 'node:fs/promises';
+import { readdir, stat, mkdir, writeFile, rm, readFile } from 'node:fs/promises';
 import { existsSync, readdirSync } from 'node:fs';
 import { spawnSync } from 'node:child_process';
 import path from 'node:path';
@@ -159,73 +161,165 @@ async function procesarAfiche(p) {
     imagen: `media/afiches/${p.id}.webp`, mini: `media/afiches/${p.id}-mini.webp`, w, h };
 }
 
+// Carrusel: Afiches\<Marca>\<Nombre del carrusel>\01.png, 02.png…
+async function procesarCarrusel(dirCarrusel, archivos, dirAfiches) {
+  archivos.sort((a, b) => a.localeCompare(b, 'es', { numeric: true }));
+  const laminas = [];
+  for (const f of archivos) laminas.push(await procesarAfiche(await describir(f, dirAfiches)));
+  const rel = path.relative(dirAfiches, dirCarrusel);
+  const huella = crypto.createHash('sha1').update(laminas.map(l => l.id).join('|')).digest('hex').slice(0, 6);
+  const fecha = laminas.map(l => l.fecha).sort().pop();
+  return {
+    ...laminas[0], id: `${slug(path.basename(dirCarrusel))}-${huella}`, titulo: titulo(dirCarrusel), fecha, _orden: rel,
+    laminas: laminas.map(({ imagen, mini, w, h }) => ({ imagen, mini, w, h })),
+    _ids: laminas.map(l => l.id),
+  };
+}
+
 function tieneTransparencia(archivo) {
   const fmt = correr(FFPROBE, ['-v', 'error', '-select_streams', 'v:0', '-show_entries', 'stream=pix_fmt',
     '-of', 'csv=p=0', archivo]).trim();
   return /a|pal8/.test(fmt.replace('gray', ''));
 }
 
-// Logos: los transparentes se centran sobre un lienzo 4:3 (claro por defecto, oscuro si el
-// nombre dice "oscuro"); los que ya traen fondo se dejan tal cual.
-async function procesarLogo(p) {
-  const dir = path.join(RAIZ, 'media', 'logos');
-  const grande = path.join(dir, `${p.id}.webp`);
-  const mini = path.join(dir, `${p.id}-mini.webp`);
+// ---------- Marcas ----------
+// datos.txt: líneas "clave: valor" (nombre, instagram, web, descripcion, concepto, lema,
+// colores, tipografia, fondo claro, fondo oscuro).
+async function leerDatos(archivo) {
+  const datos = {};
+  if (!existsSync(archivo)) return datos;
+  const texto = (await readFile(archivo, 'utf8')).replace(/^﻿/, '');
+  for (const linea of texto.split(/\r?\n/)) {
+    const m = linea.match(/^\s*([^:#]+?)\s*:\s*(.*)$/);
+    if (m) datos[slug(m[1]).replace(/-/g, '_')] = m[2].trim();
+  }
+  return datos;
+}
+
+function colores(texto = '') {
+  return texto.split(',').map(s => s.trim()).filter(Boolean).map(s => {
+    const hex = s.match(/#[0-9a-f]{3,8}/i)?.[0];
+    return hex ? { nombre: s.replace(hex, '').trim(), hex: hex.toUpperCase() } : null;
+  }).filter(Boolean);
+}
+
+// Las imágenes con transparencia se centran sobre un lienzo 4:3 con el color de la marca
+// (claro, u oscuro si el archivo dice "oscuro"); las que traen fondo propio quedan igual.
+async function procesarImagenMarca(archivo, id, carpetaSalida, fondos) {
+  const dir = path.join(RAIZ, 'media', 'marcas', carpetaSalida);
+  await mkdir(dir, { recursive: true });
+  const grande = path.join(dir, `${id}.webp`);
+  const mini = path.join(dir, `${id}-mini.webp`);
+  const oscuro = /oscuro/i.test(path.basename(archivo));
   if (!existsSync(grande)) {
-    console.log(`  ✳  ${p.titulo}`);
-    if (tieneTransparencia(p.archivo)) {
-      const fondo = /oscuro/i.test(path.basename(p.archivo)) ? '0x15191b' : '0xf4f1ea';
-      correr(FFMPEG, ['-y', '-v', 'error', '-f', 'lavfi', '-i', `color=c=${fondo}:s=1600x1200`, '-i', p.archivo,
-        '-filter_complex', '[1]scale=w=1120:h=760:force_original_aspect_ratio=decrease[l];[0][l]overlay=(W-w)/2:(H-h)/2:format=auto',
+    if (tieneTransparencia(archivo)) {
+      const fondo = (oscuro ? fondos.oscuro : fondos.claro).replace('#', '0x');
+      correr(FFMPEG, ['-y', '-v', 'error', '-f', 'lavfi', '-i', `color=c=${fondo}:s=1600x1200`, '-i', archivo,
+        '-filter_complex', '[1]scale=w=1040:h=700:force_original_aspect_ratio=decrease[l];[0][l]overlay=(W-w)/2:(H-h)/2:format=auto',
         '-frames:v', '1', '-c:v', 'libwebp', '-quality', '90', grande]);
     } else {
-      correr(FFMPEG, ['-y', '-v', 'error', '-i', p.archivo, '-frames:v', '1',
-        '-vf', 'scale=w=1600:h=1600:force_original_aspect_ratio=decrease', '-c:v', 'libwebp', '-quality', '90', grande]);
+      correr(FFMPEG, ['-y', '-v', 'error', '-i', archivo, '-frames:v', '1',
+        '-vf', 'scale=w=1800:h=1800:force_original_aspect_ratio=decrease', '-c:v', 'libwebp', '-quality', '90', grande]);
     }
   }
   if (!existsSync(mini)) {
     correr(FFMPEG, ['-y', '-v', 'error', '-i', grande, '-frames:v', '1',
-      '-vf', 'scale=w=720:h=720:force_original_aspect_ratio=decrease', '-c:v', 'libwebp', '-quality', '82', mini]);
+      '-vf', 'scale=w=900:h=900:force_original_aspect_ratio=decrease', '-c:v', 'libwebp', '-quality', '82', mini]);
   }
   const { w, h } = sondear(grande);
-  return { id: p.id, titulo: p.titulo.replace(/\s*oscuro\s*/i, ' ').trim(), cliente: p.cliente, fecha: p.fecha, _orden: p._orden,
-    imagen: `media/logos/${p.id}.webp`, mini: `media/logos/${p.id}-mini.webp`, w, h };
+  return { id, imagen: `media/marcas/${carpetaSalida}/${id}.webp`, mini: `media/marcas/${carpetaSalida}/${id}-mini.webp`,
+    w, h, oscuro, titulo: titulo(archivo).replace(/\s*oscuro\s*/i, ' ').replace(/\s+/g, ' ').trim() + (oscuro ? ' · fondo oscuro' : '') };
+}
+
+// Acepta "@usuario", "usuario" o el enlace completo; devuelve enlaces listos.
+function redes(d) {
+  const usuario = (v = '', dominio) => v.trim().replace(/^@/, '')
+    .replace(new RegExp(`^https?://(www\\.)?${dominio.replace('.', '\\.')}/(@)?`, 'i'), '').replace(/[/?].*$/, '');
+  const salida = [];
+  const ig = usuario(d.instagram, 'instagram.com');
+  if (ig) salida.push({ red: 'instagram', texto: `@${ig}`, url: `https://www.instagram.com/${ig}/` });
+  const fb = usuario(d.facebook, 'facebook.com');
+  if (fb) salida.push({ red: 'facebook', texto: 'Facebook', url: `https://www.facebook.com/${fb}` });
+  const tt = usuario(d.tiktok, 'tiktok.com');
+  if (tt) salida.push({ red: 'tiktok', texto: `@${tt}`, url: `https://www.tiktok.com/@${tt}` });
+  const wa = (d.whatsapp || '').replace(/\D/g, '');
+  if (wa) salida.push({ red: 'whatsapp', texto: 'WhatsApp', url: `https://wa.me/${wa}` });
+  if (d.web) salida.push({ red: 'web', texto: d.web.replace(/^https?:\/\//, '').replace(/\/$/, ''),
+    url: /^https?:/.test(d.web) ? d.web : `https://${d.web}` });
+  if (d.correo) salida.push({ red: 'correo', texto: d.correo, url: `mailto:${d.correo}` });
+  return salida;
+}
+
+const sinNumero = s => s.replace(/^\s*\d+\s*[-_.)·]?\s*/, '').trim();
+
+async function procesarMarca(dirMarca) {
+  const carpeta = path.basename(dirMarca);
+  const d = await leerDatos(path.join(dirMarca, 'datos.txt'));
+  const fondos = { claro: d.fondo_claro || '#F4F1EA', oscuro: d.fondo_oscuro || '#15191B' };
+  const sal = slug(carpeta);
+  const pasos = [];
+  const subdirs = (await readdir(dirMarca, { withFileTypes: true }))
+    .filter(e => e.isDirectory() && !e.name.startsWith('.'))
+    .map(e => e.name).sort((a, b) => a.localeCompare(b, 'es', { numeric: true }));
+  for (const nombre of subdirs) {
+    const archivos = (await recorrer(path.join(dirMarca, nombre)))
+      .filter(f => EXT_IMAGEN.has(path.extname(f).toLowerCase()))
+      .sort((a, b) => a.localeCompare(b, 'es', { numeric: true }));
+    const piezas = [];
+    for (const f of archivos) {
+      const st = await stat(f);
+      const huella = crypto.createHash('sha1')
+        .update(`${path.relative(dirMarca, f)}|${st.size}|${st.mtimeMs}|${fondos.claro}|${fondos.oscuro}`).digest('hex').slice(0, 6);
+      piezas.push(await procesarImagenMarca(f, `${slug(sinNumero(nombre))}-${slug(path.parse(f).name)}-${huella}`, sal, fondos));
+    }
+    if (piezas.length) pasos.push({ titulo: sinNumero(nombre), piezas });
+  }
+  // Portada de la tarjeta: la primera imagen clara del paso de logotipo (o la primera que haya)
+  const todas = pasos.flatMap(p => p.piezas);
+  const pasoLogo = pasos.find(p => /logotipo/i.test(p.titulo) && !/lema/i.test(p.titulo)) ?? pasos[0];
+  const portada = pasoLogo?.piezas.find(p => !p.oscuro) ?? pasoLogo?.piezas[0] ?? todas[0] ?? null;
+  console.log(`  ◆ ${carpeta}: ${pasos.length} pasos, ${todas.length} imágenes`);
+  return {
+    clave: carpeta, slug: sal, nombre: d.nombre || carpeta, redes: redes(d),
+    descripcion: d.descripcion || '', concepto: d.concepto || '', lema: d.lema || '',
+    colores: colores(d.colores), tipografia: d.tipografia || '', fondos,
+    portada, pasos, _ids: todas.map(p => p.id),
+  };
 }
 
 async function limpiar(subdir, idsVigentes) {
   const dir = path.join(RAIZ, 'media', subdir);
   if (!existsSync(dir)) return;
-  for (const f of await readdir(dir)) {
-    const id = f.replace(/(-mini)?\.(mp4|jpg|webp)$/, '');
-    if (!idsVigentes.has(id)) { await rm(path.join(dir, f)); console.log(`  🗑  quitado ${f}`); }
+  for (const e of await readdir(dir, { withFileTypes: true })) {
+    const ruta = path.join(dir, e.name);
+    if (e.isDirectory()) { await limpiar(path.join(subdir, e.name), idsVigentes); continue; }
+    const id = e.name.replace(/(-mini)?\.(mp4|jpg|webp)$/, '');
+    if (!idsVigentes.has(id)) { await rm(ruta); console.log(`  🗑  quitado ${e.name}`); }
   }
 }
 
 // Más reciente primero; a igual fecha, por nombre de archivo (97 antes que 100).
 const porFecha = (a, b) => b.fecha.localeCompare(a.fecha) || a._orden.localeCompare(b._orden, 'es', { numeric: true });
-const sinOrden = ({ _orden, ...resto }) => resto;
+const limpio = ({ _orden, _ids, ...resto }) => resto;
 
 async function main() {
   console.log(`Origen: ${ORIGEN}`);
   if (!existsSync(ORIGEN)) throw new Error('No existe la carpeta de origen.');
   await mkdir(path.join(RAIZ, 'media', 'reels'), { recursive: true });
   await mkdir(path.join(RAIZ, 'media', 'afiches'), { recursive: true });
-  await mkdir(path.join(RAIZ, 'media', 'logos'), { recursive: true });
 
   const dirReels = path.join(ORIGEN, 'Reels');
   const dirAfiches = path.join(ORIGEN, 'Afiches');
   const dirMotion = path.join(ORIGEN, 'Motion graphics');
-  const dirLogos = path.join(ORIGEN, 'Logos');
+  const dirMarcas = path.join(ORIGEN, 'Marcas');
   const esImagen = f => EXT_IMAGEN.has(path.extname(f).toLowerCase());
   const esVideo = f => EXT_VIDEO.has(path.extname(f).toLowerCase());
   const archivosReels = (await recorrer(dirReels)).filter(esVideo);
   const archivosMotion = (await recorrer(dirMotion)).filter(esVideo);
   const archivosAfiches = (await recorrer(dirAfiches)).filter(esImagen);
-  const archivosLogos = (await recorrer(dirLogos)).filter(esImagen);
 
-  console.log(`Reels: ${archivosReels.length} · Motion graphics: ${archivosMotion.length} · ` +
-    `Afiches: ${archivosAfiches.length} · Logos: ${archivosLogos.length}`);
-  const reels = [], motion = [], afiches = [], logos = [];
+  console.log(`Reels: ${archivosReels.length} · Motion graphics: ${archivosMotion.length} · Imágenes de afiches: ${archivosAfiches.length}`);
+  const reels = [], motion = [], afiches = [], marcas = [];
   // Reels y motion graphics comparten procesamiento y carpeta media/reels
   for (const [archivos, dir, destino] of [[archivosReels, dirReels, reels], [archivosMotion, dirMotion, motion]]) {
     for (const f of archivos) {
@@ -236,34 +330,56 @@ async function main() {
       } catch (e) { console.warn(`  ⚠ No pude procesar ${path.basename(f)}: ${e.message}`); }
     }
   }
+
+  // Afiches sueltos (Marca\imagen) y carruseles (Marca\Carrusel\imagen)
+  const carruseles = new Map();
   for (const f of archivosAfiches) {
+    const partes = path.relative(dirAfiches, f).split(path.sep);
+    if (partes.length > 2) {
+      const dirC = path.join(dirAfiches, partes[0], partes[1]);
+      carruseles.set(dirC, [...(carruseles.get(dirC) ?? []), f]);
+      continue;
+    }
     try { afiches.push(await procesarAfiche(await describir(f, dirAfiches))); }
     catch (e) { console.warn(`  ⚠ No pude procesar ${path.basename(f)}: ${e.message}`); }
   }
-  for (const f of archivosLogos) {
-    try { logos.push(await procesarLogo(await describir(f, dirLogos))); }
-    catch (e) { console.warn(`  ⚠ No pude procesar ${path.basename(f)}: ${e.message}`); }
+  for (const [dirC, archivos] of carruseles) {
+    try { console.log(`  🎞  carrusel ${path.basename(dirC)} (${archivos.length})`); afiches.push(await procesarCarrusel(dirC, archivos, dirAfiches)); }
+    catch (e) { console.warn(`  ⚠ No pude procesar el carrusel ${path.basename(dirC)}: ${e.message}`); }
   }
-  reels.sort(porFecha); motion.sort(porFecha); afiches.sort(porFecha); logos.sort(porFecha);
-  await limpiar('reels', new Set([...reels, ...motion].map(r => r.id)));
-  await limpiar('afiches', new Set(afiches.map(a => a.id)));
-  await limpiar('logos', new Set(logos.map(l => l.id)));
 
-  const datos = { actualizado: new Date().toISOString(),
-    reels: reels.map(sinOrden), motion: motion.map(sinOrden),
-    afiches: afiches.map(sinOrden), logos: logos.map(sinOrden) };
+  if (existsSync(dirMarcas)) {
+    for (const e of await readdir(dirMarcas, { withFileTypes: true })) {
+      if (!e.isDirectory() || e.name.startsWith('.')) continue;
+      try { marcas.push(await procesarMarca(path.join(dirMarcas, e.name))); }
+      catch (err) { console.warn(`  ⚠ No pude procesar la marca ${e.name}: ${err.message}`); }
+    }
+  }
+  marcas.sort((a, b) => a.nombre.localeCompare(b.nombre, 'es'));
+
+  reels.sort(porFecha); motion.sort(porFecha); afiches.sort(porFecha);
+  await limpiar('reels', new Set([...reels, ...motion].map(r => r.id)));
+  await limpiar('afiches', new Set(afiches.flatMap(a => a._ids ?? [a.id])));
+  await limpiar('marcas', new Set(marcas.flatMap(m => m._ids)));
+  await rm(path.join(RAIZ, 'media', 'logos'), { recursive: true, force: true });
+
+  const via = await leerDatos(path.join(ORIGEN, 'Vía Hub.txt'));
+  const sitio = { lema: via.lema || 'Tráfico relevante', redes: redes(via) };
+
+  const datos = { actualizado: new Date().toISOString(), sitio,
+    reels: reels.map(limpio), motion: motion.map(limpio), afiches: afiches.map(limpio), marcas: marcas.map(limpio) };
   await mkdir(path.join(RAIZ, 'data'), { recursive: true });
   await writeFile(path.join(RAIZ, 'data', 'galeria.js'),
     `window.GALERIA = ${JSON.stringify(datos, null, 2)};\n`, 'utf8');
-  console.log(`Listo: ${reels.length} reels, ${motion.length} motion graphics, ` +
-    `${afiches.length} afiches y ${logos.length} logos.`);
+  const resumen = `${reels.length} reels, ${motion.length} motion graphics, ${afiches.length} afiches y ${marcas.length} marcas`;
+  console.log(`Listo: ${resumen}.`);
 
   if (PUBLICAR) {
     const git = (...a) => spawnSync('git', a, { cwd: RAIZ, encoding: 'utf8', stdio: 'inherit' });
     git('add', '-A');
     const sinCambios = spawnSync('git', ['diff', '--cached', '--quiet'], { cwd: RAIZ }).status === 0;
     if (sinCambios) { console.log('No hay cambios para publicar.'); return; }
-    git('commit', '-m', `Galería: ${reels.length} reels, ${motion.length} motion, ${afiches.length} afiches, ${logos.length} logos`);
+    git('commit', '-m', `Galería: ${resumen}`);
     if (git('push').status !== 0) throw new Error('No se pudo subir a GitHub.');
     console.log('Publicado. La página se actualiza en 1–2 minutos.');
   }
