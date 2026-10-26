@@ -347,7 +347,8 @@ main { max-width: 1280px; margin: 0 auto; padding: 8px 16px 40px; }
 }
 
 /* Marco de navegador para capturas de sitios web */
-.paso-piezas.sitio { grid-template-columns: 1fr; max-width: 860px; }
+.paso-piezas.sitio { grid-template-columns: 1fr; max-width: 860px; justify-items: start; }
+.paso-piezas.sitio .paso-pieza { width: 100%; }
 .paso-piezas.sitio .paso-pieza {
   padding-top: 34px; background: #e8ebee; border-radius: 12px;
   box-shadow: 0 24px 60px -28px rgba(0, 0, 0, .7);

@@ -1,10 +1,76 @@
 window.GALERIA = {
-  "actualizado": "2026-10-15T03:32:57.847Z",
+  "actualizado": "2026-10-26T04:36:55.887Z",
   "sitio": {
     "lema": "Tráfico relevante",
     "redes": []
   },
   "reels": [
+    {
+      "id": "tutorial-de-reservas-2ade6c",
+      "titulo": "Tutorial de reservas",
+      "cliente": "Agendo",
+      "fecha": "2026-10-26T09:38:32.000Z",
+      "video": "media/reels/tutorial-de-reservas-2ade6c.mp4",
+      "portada": "media/reels/tutorial-de-reservas-2ade6c.jpg",
+      "w": 720,
+      "h": 1280,
+      "dur": 103
+    },
+    {
+      "id": "cohabitar-50ac89",
+      "titulo": "Cohabitar",
+      "cliente": "Jessica Cheng",
+      "fecha": "2026-10-26T02:20:22.265Z",
+      "video": "media/reels/cohabitar-50ac89.mp4",
+      "portada": "media/reels/cohabitar-50ac89.jpg",
+      "w": 720,
+      "h": 1280,
+      "dur": 250
+    },
+    {
+      "id": "por-que-no-termina-sus-esculturas-248bd0",
+      "titulo": "Por qué no termina sus esculturas",
+      "cliente": "Jessica Cheng",
+      "fecha": "2026-10-25T23:22:16.444Z",
+      "video": "media/reels/por-que-no-termina-sus-esculturas-248bd0.mp4",
+      "portada": "media/reels/por-que-no-termina-sus-esculturas-248bd0.jpg",
+      "w": 720,
+      "h": 1280,
+      "dur": 44
+    },
+    {
+      "id": "clasicos-64e43a",
+      "titulo": "Clásicos",
+      "cliente": "Ruá",
+      "fecha": "2026-10-22T13:27:43.019Z",
+      "video": "media/reels/clasicos-64e43a.mp4",
+      "portada": "media/reels/clasicos-64e43a.jpg",
+      "w": 720,
+      "h": 1280,
+      "dur": 36
+    },
+    {
+      "id": "musica-de-pelicula-f74aa0",
+      "titulo": "Música de película",
+      "cliente": "Ruá",
+      "fecha": "2026-10-20T01:00:34.647Z",
+      "video": "media/reels/musica-de-pelicula-f74aa0.mp4",
+      "portada": "media/reels/musica-de-pelicula-f74aa0.jpg",
+      "w": 720,
+      "h": 1280,
+      "dur": 28
+    },
+    {
+      "id": "don-t-stop-believin-b4b853",
+      "titulo": "Don't Stop Believin'",
+      "cliente": "Ruá",
+      "fecha": "2026-10-20T01:00:28.909Z",
+      "video": "media/reels/don-t-stop-believin-b4b853.mp4",
+      "portada": "media/reels/don-t-stop-believin-b4b853.jpg",
+      "w": 720,
+      "h": 1280,
+      "dur": 36
+    },
     {
       "id": "tres-preguntas-589cb1",
       "titulo": "Tres preguntas",
@@ -52,6 +118,50 @@ window.GALERIA = {
   ],
   "motion": [
     {
+      "id": "cedula-animada-koala-8c9a3f",
+      "titulo": "Cédula animada, koala",
+      "cliente": "Jessica Cheng",
+      "fecha": "2026-10-25T19:12:56.239Z",
+      "video": "media/reels/cedula-animada-koala-8c9a3f.mp4",
+      "portada": "media/reels/cedula-animada-koala-8c9a3f.jpg",
+      "w": 720,
+      "h": 1280,
+      "dur": 5
+    },
+    {
+      "id": "cedula-animada-lince-3b351c",
+      "titulo": "Cédula animada, lince",
+      "cliente": "Jessica Cheng",
+      "fecha": "2026-10-25T19:12:08.262Z",
+      "video": "media/reels/cedula-animada-lince-3b351c.mp4",
+      "portada": "media/reels/cedula-animada-lince-3b351c.jpg",
+      "w": 720,
+      "h": 1280,
+      "dur": 5
+    },
+    {
+      "id": "cedula-animada-tucan-7de2ae",
+      "titulo": "Cédula animada, tucán",
+      "cliente": "Jessica Cheng",
+      "fecha": "2026-10-25T19:11:20.897Z",
+      "video": "media/reels/cedula-animada-tucan-7de2ae.mp4",
+      "portada": "media/reels/cedula-animada-tucan-7de2ae.jpg",
+      "w": 720,
+      "h": 1280,
+      "dur": 5
+    },
+    {
+      "id": "antes-del-si-320182",
+      "titulo": "Antes del sí",
+      "cliente": "Ruá",
+      "fecha": "2026-10-20T01:00:16.547Z",
+      "video": "media/reels/antes-del-si-320182.mp4",
+      "portada": "media/reels/antes-del-si-320182.jpg",
+      "w": 720,
+      "h": 1280,
+      "dur": 34
+    },
+    {
       "id": "hecho-para-tu-negocio-59b2f7",
       "titulo": "Hecho para tu negocio",
       "cliente": "Diwo",
@@ -63,18 +173,280 @@ window.GALERIA = {
       "dur": 30
     },
     {
-      "id": "antes-del-si-173381",
-      "titulo": "Antes del sí",
+      "id": "logo-en-disolucion-fafbcc",
+      "titulo": "Logo en disolución",
       "cliente": "Ruá",
-      "fecha": "2026-10-15T01:23:04.076Z",
-      "video": "media/reels/antes-del-si-173381.mp4",
-      "portada": "media/reels/antes-del-si-173381.jpg",
-      "w": 540,
-      "h": 960,
-      "dur": 34
+      "fecha": "2026-09-25T21:02:28.916Z",
+      "video": "media/reels/logo-en-disolucion-fafbcc.mp4",
+      "portada": "media/reels/logo-en-disolucion-fafbcc.jpg",
+      "w": 720,
+      "h": 1280,
+      "dur": 8
+    },
+    {
+      "id": "logo-letra-por-letra-940949",
+      "titulo": "Logo, letra por letra",
+      "cliente": "Ruá",
+      "fecha": "2026-09-25T21:02:27.944Z",
+      "video": "media/reels/logo-letra-por-letra-940949.mp4",
+      "portada": "media/reels/logo-letra-por-letra-940949.jpg",
+      "w": 720,
+      "h": 1280,
+      "dur": 8
+    },
+    {
+      "id": "logo-revelado-lateral-141abc",
+      "titulo": "Logo, revelado lateral",
+      "cliente": "Ruá",
+      "fecha": "2026-09-25T21:02:26.094Z",
+      "video": "media/reels/logo-revelado-lateral-141abc.mp4",
+      "portada": "media/reels/logo-revelado-lateral-141abc.jpg",
+      "w": 720,
+      "h": 1280,
+      "dur": 7
     }
   ],
   "afiches": [
+    {
+      "id": "de-diwo-a-la-web-f68ac5",
+      "titulo": "De Diwo a la web",
+      "cliente": "Diwo",
+      "fecha": "2026-10-26T03:55:42.959Z",
+      "imagen": "media/afiches/01-3a7395.webp",
+      "mini": "media/afiches/01-3a7395-mini.webp",
+      "w": 1600,
+      "h": 1222,
+      "laminas": [
+        {
+          "imagen": "media/afiches/01-3a7395.webp",
+          "mini": "media/afiches/01-3a7395-mini.webp",
+          "w": 1600,
+          "h": 1222
+        },
+        {
+          "imagen": "media/afiches/02-aece65.webp",
+          "mini": "media/afiches/02-aece65-mini.webp",
+          "w": 1600,
+          "h": 2000
+        }
+      ]
+    },
+    {
+      "id": "asi-se-reserva-7b7972",
+      "titulo": "Así se reserva",
+      "cliente": "Agendo",
+      "fecha": "2026-10-26T03:53:53.335Z",
+      "imagen": "media/afiches/01-1a314c.webp",
+      "mini": "media/afiches/01-1a314c-mini.webp",
+      "w": 1109,
+      "h": 2400,
+      "laminas": [
+        {
+          "imagen": "media/afiches/01-1a314c.webp",
+          "mini": "media/afiches/01-1a314c-mini.webp",
+          "w": 1109,
+          "h": 2400
+        },
+        {
+          "imagen": "media/afiches/02-34ea5f.webp",
+          "mini": "media/afiches/02-34ea5f-mini.webp",
+          "w": 1109,
+          "h": 2400
+        },
+        {
+          "imagen": "media/afiches/03-845e07.webp",
+          "mini": "media/afiches/03-845e07-mini.webp",
+          "w": 1109,
+          "h": 2400
+        },
+        {
+          "imagen": "media/afiches/04-87b69a.webp",
+          "mini": "media/afiches/04-87b69a-mini.webp",
+          "w": 1109,
+          "h": 2400
+        },
+        {
+          "imagen": "media/afiches/05-745e5c.webp",
+          "mini": "media/afiches/05-745e5c-mini.webp",
+          "w": 1109,
+          "h": 2400
+        },
+        {
+          "imagen": "media/afiches/06-141aaa.webp",
+          "mini": "media/afiches/06-141aaa-mini.webp",
+          "w": 1109,
+          "h": 2400
+        },
+        {
+          "imagen": "media/afiches/07-8a065e.webp",
+          "mini": "media/afiches/07-8a065e-mini.webp",
+          "w": 1109,
+          "h": 2400
+        },
+        {
+          "imagen": "media/afiches/08-9a11c1.webp",
+          "mini": "media/afiches/08-9a11c1-mini.webp",
+          "w": 1109,
+          "h": 2400
+        },
+        {
+          "imagen": "media/afiches/09-6ea647.webp",
+          "mini": "media/afiches/09-6ea647-mini.webp",
+          "w": 1109,
+          "h": 2400
+        },
+        {
+          "imagen": "media/afiches/10-258e6b.webp",
+          "mini": "media/afiches/10-258e6b-mini.webp",
+          "w": 1109,
+          "h": 2400
+        }
+      ]
+    },
+    {
+      "id": "vip-show-78e5a1",
+      "titulo": "VIP Show",
+      "cliente": "Jessica Cheng",
+      "fecha": "2026-10-25T19:08:25.184Z",
+      "imagen": "media/afiches/01-b4464a.webp",
+      "mini": "media/afiches/01-b4464a-mini.webp",
+      "w": 1600,
+      "h": 2000,
+      "laminas": [
+        {
+          "imagen": "media/afiches/01-b4464a.webp",
+          "mini": "media/afiches/01-b4464a-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/02-71e2e1.webp",
+          "mini": "media/afiches/02-71e2e1-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/03-9eed86.webp",
+          "mini": "media/afiches/03-9eed86-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/04-c74a25.webp",
+          "mini": "media/afiches/04-c74a25-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/05-c176dc.webp",
+          "mini": "media/afiches/05-c176dc-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/06-d4f3a9.webp",
+          "mini": "media/afiches/06-d4f3a9-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/07-a4381f.webp",
+          "mini": "media/afiches/07-a4381f-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/08-732d4a.webp",
+          "mini": "media/afiches/08-732d4a-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/09-279656.webp",
+          "mini": "media/afiches/09-279656-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/10-375810.webp",
+          "mini": "media/afiches/10-375810-mini.webp",
+          "w": 1600,
+          "h": 2000
+        }
+      ]
+    },
+    {
+      "id": "publicaciones-octubre-84773a",
+      "titulo": "Publicaciones octubre",
+      "cliente": "Ruá",
+      "fecha": "2026-10-20T01:20:54.461Z",
+      "imagen": "media/afiches/01-74b043.webp",
+      "mini": "media/afiches/01-74b043-mini.webp",
+      "w": 1600,
+      "h": 2000,
+      "laminas": [
+        {
+          "imagen": "media/afiches/01-74b043.webp",
+          "mini": "media/afiches/01-74b043-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/02-a033f1.webp",
+          "mini": "media/afiches/02-a033f1-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/03-819e69.webp",
+          "mini": "media/afiches/03-819e69-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/04-b37109.webp",
+          "mini": "media/afiches/04-b37109-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/05-bdf9d4.webp",
+          "mini": "media/afiches/05-bdf9d4-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/06-af466c.webp",
+          "mini": "media/afiches/06-af466c-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/07-11a7cb.webp",
+          "mini": "media/afiches/07-11a7cb-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/08-ab457f.webp",
+          "mini": "media/afiches/08-ab457f-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/09-bbd0b2.webp",
+          "mini": "media/afiches/09-bbd0b2-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/10-2d7aa8.webp",
+          "mini": "media/afiches/10-2d7aa8-mini.webp",
+          "w": 1600,
+          "h": 2000
+        }
+      ]
+    },
     {
       "id": "escanee-para-conocernos-fafe30",
       "titulo": "Escanee para conocernos",
@@ -320,6 +692,102 @@ window.GALERIA = {
   ],
   "marcas": [
     {
+      "clave": "Agendo",
+      "slug": "agendo",
+      "nombre": "Agendo",
+      "identidad": true,
+      "redes": [
+        {
+          "red": "web",
+          "texto": "agendo-xi7.pages.dev",
+          "url": "https://agendo-xi7.pages.dev"
+        }
+      ],
+      "descripcion": "Plataforma de reservas de Vía Hub Studio. Las familias apartan espacios desde el celular, el equipo ve su agenda por semana y por mes, y todo se sincroniza con Google Calendar. Su primer cliente es CUN Desarrollo Integral.",
+      "concepto": "",
+      "lema": "",
+      "colores": [
+        {
+          "nombre": "Noche",
+          "hex": "#17323D"
+        },
+        {
+          "nombre": "Turquesa",
+          "hex": "#09C2C2"
+        },
+        {
+          "nombre": "Pizarra",
+          "hex": "#2F5361"
+        },
+        {
+          "nombre": "Niebla",
+          "hex": "#C7D5DB"
+        }
+      ],
+      "tipografia": "",
+      "fondos": {
+        "claro": "#F1F5F6",
+        "oscuro": "#17323D"
+      },
+      "portada": {
+        "id": "logotipo-horizontal-5c828b",
+        "imagen": "media/marcas/agendo/logotipo-horizontal-5c828b.webp",
+        "mini": "media/marcas/agendo/logotipo-horizontal-5c828b-mini.webp",
+        "w": 1600,
+        "h": 1200,
+        "oscuro": false,
+        "titulo": "Horizontal"
+      },
+      "pasos": [
+        {
+          "titulo": "Icono",
+          "piezas": [
+            {
+              "id": "icono-icono-3018b5",
+              "imagen": "media/marcas/agendo/icono-icono-3018b5.webp",
+              "mini": "media/marcas/agendo/icono-icono-3018b5-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": false,
+              "titulo": "Icono"
+            },
+            {
+              "id": "icono-simbolo-oscuro-a876e0",
+              "imagen": "media/marcas/agendo/icono-simbolo-oscuro-a876e0.webp",
+              "mini": "media/marcas/agendo/icono-simbolo-oscuro-a876e0-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": true,
+              "titulo": "Símbolo · fondo oscuro"
+            }
+          ]
+        },
+        {
+          "titulo": "Logotipo",
+          "piezas": [
+            {
+              "id": "logotipo-horizontal-oscuro-d074e4",
+              "imagen": "media/marcas/agendo/logotipo-horizontal-oscuro-d074e4.webp",
+              "mini": "media/marcas/agendo/logotipo-horizontal-oscuro-d074e4-mini.webp",
+              "w": 1800,
+              "h": 608,
+              "oscuro": true,
+              "titulo": "Horizontal · fondo oscuro"
+            },
+            {
+              "id": "logotipo-horizontal-5c828b",
+              "imagen": "media/marcas/agendo/logotipo-horizontal-5c828b.webp",
+              "mini": "media/marcas/agendo/logotipo-horizontal-5c828b-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": false,
+              "titulo": "Horizontal"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "clave": "Diwo",
       "slug": "diwo",
       "nombre": "Dìwö",
@@ -419,6 +887,24 @@ window.GALERIA = {
               "titulo": "Horizontal"
             },
             {
+              "id": "logotipo-monocromo-oscuro-f55c19",
+              "imagen": "media/marcas/diwo/logotipo-monocromo-oscuro-f55c19.webp",
+              "mini": "media/marcas/diwo/logotipo-monocromo-oscuro-f55c19-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": true,
+              "titulo": "Monocromo · fondo oscuro"
+            },
+            {
+              "id": "logotipo-monocromo-8844d5",
+              "imagen": "media/marcas/diwo/logotipo-monocromo-8844d5.webp",
+              "mini": "media/marcas/diwo/logotipo-monocromo-8844d5-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": false,
+              "titulo": "Monocromo"
+            },
+            {
               "id": "logotipo-vertical-oscuro-346a5f",
               "imagen": "media/marcas/diwo/logotipo-vertical-oscuro-346a5f.webp",
               "mini": "media/marcas/diwo/logotipo-vertical-oscuro-346a5f-mini.webp",
@@ -441,6 +927,15 @@ window.GALERIA = {
         {
           "titulo": "Logotipo con lema",
           "piezas": [
+            {
+              "id": "logotipo-con-lema-horizontal-con-lema-oscuro-c4f096",
+              "imagen": "media/marcas/diwo/logotipo-con-lema-horizontal-con-lema-oscuro-c4f096.webp",
+              "mini": "media/marcas/diwo/logotipo-con-lema-horizontal-con-lema-oscuro-c4f096-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": true,
+              "titulo": "Horizontal con lema · fondo oscuro"
+            },
             {
               "id": "logotipo-con-lema-horizontal-con-lema-8f9e75",
               "imagen": "media/marcas/diwo/logotipo-con-lema-horizontal-con-lema-8f9e75.webp",
@@ -514,6 +1009,205 @@ window.GALERIA = {
       ]
     },
     {
+      "clave": "Pulso",
+      "slug": "pulso",
+      "nombre": "Pulso",
+      "identidad": true,
+      "redes": [],
+      "descripcion": "App de escritorio de Vía Hub Studio para editar video conversando con Claude y dejar el audio limpio: corta por frases o por compases, pone textos y motion graphics y limpia voces, ruido y eco.",
+      "concepto": "Un video de evento tiene pulso dos veces: el de la música, que marca dónde cortar, y el de la gente que celebra. El isotipo es un compás de 4/4 que forma un botón de reproducir: cuatro barras que se acortan hasta casi un punto. El primer tiempo, el fuerte, late en coral; las otras tres van en el turquesa de Vía Hub, porque Pulso es de la familia del estudio.",
+      "lema": "Cortá al pulso",
+      "colores": [
+        {
+          "nombre": "Turquesa",
+          "hex": "#0BC3C4"
+        },
+        {
+          "nombre": "Latido",
+          "hex": "#FF6F5E"
+        },
+        {
+          "nombre": "Petróleo",
+          "hex": "#1B323D"
+        },
+        {
+          "nombre": "Tinta",
+          "hex": "#0B1D24"
+        },
+        {
+          "nombre": "Papel",
+          "hex": "#F2F8F8"
+        }
+      ],
+      "tipografia": "Montserrat",
+      "fondos": {
+        "claro": "#F2F8F8",
+        "oscuro": "#0B1D24"
+      },
+      "portada": {
+        "id": "logotipo-horizontal-bf8702",
+        "imagen": "media/marcas/pulso/logotipo-horizontal-bf8702.webp",
+        "mini": "media/marcas/pulso/logotipo-horizontal-bf8702-mini.webp",
+        "w": 1600,
+        "h": 1200,
+        "oscuro": false,
+        "titulo": "Horizontal"
+      },
+      "pasos": [
+        {
+          "titulo": "Isotipo",
+          "piezas": [
+            {
+              "id": "isotipo-blanco-oscuro-8bcb53",
+              "imagen": "media/marcas/pulso/isotipo-blanco-oscuro-8bcb53.webp",
+              "mini": "media/marcas/pulso/isotipo-blanco-oscuro-8bcb53-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": true,
+              "titulo": "Blanco · fondo oscuro"
+            },
+            {
+              "id": "isotipo-color-f554c3",
+              "imagen": "media/marcas/pulso/isotipo-color-f554c3.webp",
+              "mini": "media/marcas/pulso/isotipo-color-f554c3-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": false,
+              "titulo": "Color"
+            },
+            {
+              "id": "isotipo-una-tinta-d785ba",
+              "imagen": "media/marcas/pulso/isotipo-una-tinta-d785ba.webp",
+              "mini": "media/marcas/pulso/isotipo-una-tinta-d785ba-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": false,
+              "titulo": "Una tinta"
+            }
+          ]
+        },
+        {
+          "titulo": "Logotipo",
+          "piezas": [
+            {
+              "id": "logotipo-horizontal-oscuro-0d5592",
+              "imagen": "media/marcas/pulso/logotipo-horizontal-oscuro-0d5592.webp",
+              "mini": "media/marcas/pulso/logotipo-horizontal-oscuro-0d5592-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": true,
+              "titulo": "Horizontal · fondo oscuro"
+            },
+            {
+              "id": "logotipo-horizontal-bf8702",
+              "imagen": "media/marcas/pulso/logotipo-horizontal-bf8702.webp",
+              "mini": "media/marcas/pulso/logotipo-horizontal-bf8702-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": false,
+              "titulo": "Horizontal"
+            },
+            {
+              "id": "logotipo-vertical-oscuro-287993",
+              "imagen": "media/marcas/pulso/logotipo-vertical-oscuro-287993.webp",
+              "mini": "media/marcas/pulso/logotipo-vertical-oscuro-287993-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": true,
+              "titulo": "Vertical · fondo oscuro"
+            },
+            {
+              "id": "logotipo-vertical-642c2d",
+              "imagen": "media/marcas/pulso/logotipo-vertical-642c2d.webp",
+              "mini": "media/marcas/pulso/logotipo-vertical-642c2d-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": false,
+              "titulo": "Vertical"
+            }
+          ]
+        },
+        {
+          "titulo": "Logotipo con Vía Hub",
+          "piezas": [
+            {
+              "id": "logotipo-con-via-hub-con-via-hub-oscuro-6a18c9",
+              "imagen": "media/marcas/pulso/logotipo-con-via-hub-con-via-hub-oscuro-6a18c9.webp",
+              "mini": "media/marcas/pulso/logotipo-con-via-hub-con-via-hub-oscuro-6a18c9-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": true,
+              "titulo": "Con Vía Hub · fondo oscuro"
+            },
+            {
+              "id": "logotipo-con-via-hub-con-via-hub-87b41f",
+              "imagen": "media/marcas/pulso/logotipo-con-via-hub-con-via-hub-87b41f.webp",
+              "mini": "media/marcas/pulso/logotipo-con-via-hub-con-via-hub-87b41f-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": false,
+              "titulo": "Con Vía Hub"
+            }
+          ]
+        },
+        {
+          "titulo": "Ícono",
+          "piezas": [
+            {
+              "id": "icono-icono-de-la-app-fc2549",
+              "imagen": "media/marcas/pulso/icono-icono-de-la-app-fc2549.webp",
+              "mini": "media/marcas/pulso/icono-icono-de-la-app-fc2549-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": false,
+              "titulo": "Ícono de la app"
+            }
+          ]
+        },
+        {
+          "titulo": "Pantallas",
+          "piezas": [
+            {
+              "id": "pantallas-1-linea-de-tiempo-multipista-fb30c9",
+              "imagen": "media/marcas/pulso/pantallas-1-linea-de-tiempo-multipista-fb30c9.webp",
+              "mini": "media/marcas/pulso/pantallas-1-linea-de-tiempo-multipista-fb30c9-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": false,
+              "titulo": "Línea de tiempo multipista"
+            },
+            {
+              "id": "pantallas-2-reproductor-en-vivo-f59bbc",
+              "imagen": "media/marcas/pulso/pantallas-2-reproductor-en-vivo-f59bbc.webp",
+              "mini": "media/marcas/pulso/pantallas-2-reproductor-en-vivo-f59bbc-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": false,
+              "titulo": "Reproductor en vivo"
+            },
+            {
+              "id": "pantallas-3-manejada-desde-claude-code-85748f",
+              "imagen": "media/marcas/pulso/pantallas-3-manejada-desde-claude-code-85748f.webp",
+              "mini": "media/marcas/pulso/pantallas-3-manejada-desde-claude-code-85748f-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": false,
+              "titulo": "Manejada desde Claude Code"
+            },
+            {
+              "id": "pantallas-4-cuadros-del-render-77f661",
+              "imagen": "media/marcas/pulso/pantallas-4-cuadros-del-render-77f661.webp",
+              "mini": "media/marcas/pulso/pantallas-4-cuadros-del-render-77f661-mini.webp",
+              "w": 1800,
+              "h": 640,
+              "oscuro": false,
+              "titulo": "Cuadros del render"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "clave": "QuiroDei",
       "slug": "quirodei",
       "nombre": "QuiroDei",
@@ -526,12 +1220,12 @@ window.GALERIA = {
         },
         {
           "red": "web",
-          "texto": "quirodei.com",
-          "url": "https://quirodei.com"
+          "texto": "quirodei-web.pages.dev",
+          "url": "https://quirodei-web.pages.dev"
         }
       ],
-      "descripcion": "Clínica quiropráctica de la Dra. Deilyn Solano Bonilla. Identidad, sitio web y contenido para redes.",
-      "concepto": "",
+      "descripcion": "Clínica quiropráctica de la Dra. Deilyn Solano Bonilla en Montes de Oca. Identidad, sitio web nuevo y contenido para redes; el blog y los testimonios del sitio se publican desde Diwo.",
+      "concepto": "El enfoque de la doctora es el sistema nervioso, no solo la columna. Por eso la firma visual del sitio no son huesos ni columnas sino una sinapsis: un axón que le pasa el impulso a una dendrita, sutil y casi transparente. Se rediseñó cómo se ve y cómo se recorre el sitio, respetando palabra por palabra los textos de la doctora.",
       "lema": "",
       "colores": [
         {
@@ -585,6 +1279,15 @@ window.GALERIA = {
               "titulo": "Compacto"
             },
             {
+              "id": "logotipo-horizontal-oscuro-eb4b1d",
+              "imagen": "media/marcas/quirodei/logotipo-horizontal-oscuro-eb4b1d.webp",
+              "mini": "media/marcas/quirodei/logotipo-horizontal-oscuro-eb4b1d-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": true,
+              "titulo": "Horizontal · fondo oscuro"
+            },
+            {
               "id": "logotipo-horizontal-2fbc32",
               "imagen": "media/marcas/quirodei/logotipo-horizontal-2fbc32.webp",
               "mini": "media/marcas/quirodei/logotipo-horizontal-2fbc32-mini.webp",
@@ -599,13 +1302,63 @@ window.GALERIA = {
           "titulo": "Sitio web",
           "piezas": [
             {
-              "id": "sitio-web-quirodei-com-5cb507",
-              "imagen": "media/marcas/quirodei/sitio-web-quirodei-com-5cb507.webp",
-              "mini": "media/marcas/quirodei/sitio-web-quirodei-com-5cb507-mini.webp",
+              "id": "sitio-web-1-inicio-38da31",
+              "imagen": "media/marcas/quirodei/sitio-web-1-inicio-38da31.webp",
+              "mini": "media/marcas/quirodei/sitio-web-1-inicio-38da31-mini.webp",
               "w": 1800,
               "h": 1125,
               "oscuro": false,
-              "titulo": "quirodei.com"
+              "titulo": "Inicio"
+            },
+            {
+              "id": "sitio-web-2-inicio-en-celular-e66b08",
+              "imagen": "media/marcas/quirodei/sitio-web-2-inicio-en-celular-e66b08.webp",
+              "mini": "media/marcas/quirodei/sitio-web-2-inicio-en-celular-e66b08-mini.webp",
+              "w": 832,
+              "h": 1800,
+              "oscuro": false,
+              "titulo": "Inicio en celular"
+            },
+            {
+              "id": "sitio-web-3-blog-fbbeca",
+              "imagen": "media/marcas/quirodei/sitio-web-3-blog-fbbeca.webp",
+              "mini": "media/marcas/quirodei/sitio-web-3-blog-fbbeca-mini.webp",
+              "w": 1800,
+              "h": 1375,
+              "oscuro": false,
+              "titulo": "Blog"
+            },
+            {
+              "id": "sitio-web-4-publicado-desde-diwo-bb8e96",
+              "imagen": "media/marcas/quirodei/sitio-web-4-publicado-desde-diwo-bb8e96.webp",
+              "mini": "media/marcas/quirodei/sitio-web-4-publicado-desde-diwo-bb8e96-mini.webp",
+              "w": 1440,
+              "h": 1800,
+              "oscuro": false,
+              "titulo": "Publicado desde Diwo"
+            }
+          ]
+        },
+        {
+          "titulo": "Sinapsis",
+          "piezas": [
+            {
+              "id": "sinapsis-sinapsis-oscuro-3d1d1c",
+              "imagen": "media/marcas/quirodei/sinapsis-sinapsis-oscuro-3d1d1c.webp",
+              "mini": "media/marcas/quirodei/sinapsis-sinapsis-oscuro-3d1d1c-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": true,
+              "titulo": "Sinapsis · fondo oscuro"
+            },
+            {
+              "id": "sinapsis-sinapsis-d2a5c0",
+              "imagen": "media/marcas/quirodei/sinapsis-sinapsis-d2a5c0.webp",
+              "mini": "media/marcas/quirodei/sinapsis-sinapsis-d2a5c0-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": false,
+              "titulo": "Sinapsis"
             }
           ]
         }
@@ -638,9 +1391,9 @@ window.GALERIA = {
         "oscuro": "#140E0B"
       },
       "portada": {
-        "id": "portada-6020d8",
-        "imagen": "media/marcas/rua/portada-6020d8.webp",
-        "mini": "media/marcas/rua/portada-6020d8-mini.webp",
+        "id": "portada-151a26",
+        "imagen": "media/marcas/rua/portada-151a26.webp",
+        "mini": "media/marcas/rua/portada-151a26-mini.webp",
         "w": 1600,
         "h": 1200,
         "oscuro": true,

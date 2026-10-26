@@ -216,11 +216,12 @@
     const portada = m.portada;
     const imagenesProceso = m.pasos.flatMap(p => p.piezas.map(x => ({ ...x, cliente: m.clave, titulo: `${p.titulo} · ${x.titulo}` })));
     const propias = piezas.filter(p => p.cliente === m.clave);
+    const dominio = m.redes.find(r => r.red === 'web')?.texto ?? '';
     let n = 0;
     const pasos = [
       // Los pasos "Sitio web…" se muestran dentro de un marco de navegador
       ...m.pasos.map(p => ({ titulo: p.titulo, html: `<div class="paso-piezas ${/^sitio/i.test(p.titulo) ? 'sitio' : ''}">${p.piezas.map(x =>
-        `<button type="button" class="paso-pieza" data-i="${n++}" ${/^sitio/i.test(p.titulo) ? `data-url="${esc(x.titulo)}"` : `style="aspect-ratio:${x.w}/${x.h}"`} aria-label="Ampliar ${esc(x.titulo)}">
+        `<button type="button" class="paso-pieza" data-i="${n++}" ${/^sitio/i.test(p.titulo) ? `data-url="${esc(dominio ? `${dominio} · ${x.titulo}` : x.titulo)}" style="max-width:${x.w}px"` : `style="aspect-ratio:${x.w}/${x.h}"`} aria-label="Ampliar ${esc(x.titulo)}">
            <img src="${x.mini}" alt="${esc(x.titulo)}" loading="lazy"><span>${esc(x.titulo)}</span></button>`).join('')}</div>` })),
       ...(m.colores.length ? [{ titulo: 'Colores', html: `<div class="paleta">${m.colores.map(c =>
         `<button type="button" class="color" data-hex="${c.hex}" aria-label="Copiar ${esc(c.nombre)} ${c.hex}">
