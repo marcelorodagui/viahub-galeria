@@ -1,43 +1,10 @@
 window.GALERIA = {
-  "actualizado": "2026-10-26T04:36:55.887Z",
+  "actualizado": "2026-10-26T04:52:57.588Z",
   "sitio": {
     "lema": "Tráfico relevante",
     "redes": []
   },
   "reels": [
-    {
-      "id": "tutorial-de-reservas-2ade6c",
-      "titulo": "Tutorial de reservas",
-      "cliente": "Agendo",
-      "fecha": "2026-10-26T09:38:32.000Z",
-      "video": "media/reels/tutorial-de-reservas-2ade6c.mp4",
-      "portada": "media/reels/tutorial-de-reservas-2ade6c.jpg",
-      "w": 720,
-      "h": 1280,
-      "dur": 103
-    },
-    {
-      "id": "cohabitar-50ac89",
-      "titulo": "Cohabitar",
-      "cliente": "Jessica Cheng",
-      "fecha": "2026-10-26T02:20:22.265Z",
-      "video": "media/reels/cohabitar-50ac89.mp4",
-      "portada": "media/reels/cohabitar-50ac89.jpg",
-      "w": 720,
-      "h": 1280,
-      "dur": 250
-    },
-    {
-      "id": "por-que-no-termina-sus-esculturas-248bd0",
-      "titulo": "Por qué no termina sus esculturas",
-      "cliente": "Jessica Cheng",
-      "fecha": "2026-10-25T23:22:16.444Z",
-      "video": "media/reels/por-que-no-termina-sus-esculturas-248bd0.mp4",
-      "portada": "media/reels/por-que-no-termina-sus-esculturas-248bd0.jpg",
-      "w": 720,
-      "h": 1280,
-      "dur": 44
-    },
     {
       "id": "clasicos-64e43a",
       "titulo": "Clásicos",
@@ -118,37 +85,15 @@ window.GALERIA = {
   ],
   "motion": [
     {
-      "id": "cedula-animada-koala-8c9a3f",
-      "titulo": "Cédula animada, koala",
-      "cliente": "Jessica Cheng",
-      "fecha": "2026-10-25T19:12:56.239Z",
-      "video": "media/reels/cedula-animada-koala-8c9a3f.mp4",
-      "portada": "media/reels/cedula-animada-koala-8c9a3f.jpg",
+      "id": "tutorial-de-reservas-2ade6c",
+      "titulo": "Tutorial de reservas",
+      "cliente": "Agendo",
+      "fecha": "2026-10-26T09:38:32.000Z",
+      "video": "media/reels/tutorial-de-reservas-2ade6c.mp4",
+      "portada": "media/reels/tutorial-de-reservas-2ade6c.jpg",
       "w": 720,
       "h": 1280,
-      "dur": 5
-    },
-    {
-      "id": "cedula-animada-lince-3b351c",
-      "titulo": "Cédula animada, lince",
-      "cliente": "Jessica Cheng",
-      "fecha": "2026-10-25T19:12:08.262Z",
-      "video": "media/reels/cedula-animada-lince-3b351c.mp4",
-      "portada": "media/reels/cedula-animada-lince-3b351c.jpg",
-      "w": 720,
-      "h": 1280,
-      "dur": 5
-    },
-    {
-      "id": "cedula-animada-tucan-7de2ae",
-      "titulo": "Cédula animada, tucán",
-      "cliente": "Jessica Cheng",
-      "fecha": "2026-10-25T19:11:20.897Z",
-      "video": "media/reels/cedula-animada-tucan-7de2ae.mp4",
-      "portada": "media/reels/cedula-animada-tucan-7de2ae.jpg",
-      "w": 720,
-      "h": 1280,
-      "dur": 5
+      "dur": 103
     },
     {
       "id": "antes-del-si-320182",
@@ -171,39 +116,6 @@ window.GALERIA = {
       "w": 720,
       "h": 1280,
       "dur": 30
-    },
-    {
-      "id": "logo-en-disolucion-fafbcc",
-      "titulo": "Logo en disolución",
-      "cliente": "Ruá",
-      "fecha": "2026-09-25T21:02:28.916Z",
-      "video": "media/reels/logo-en-disolucion-fafbcc.mp4",
-      "portada": "media/reels/logo-en-disolucion-fafbcc.jpg",
-      "w": 720,
-      "h": 1280,
-      "dur": 8
-    },
-    {
-      "id": "logo-letra-por-letra-940949",
-      "titulo": "Logo, letra por letra",
-      "cliente": "Ruá",
-      "fecha": "2026-09-25T21:02:27.944Z",
-      "video": "media/reels/logo-letra-por-letra-940949.mp4",
-      "portada": "media/reels/logo-letra-por-letra-940949.jpg",
-      "w": 720,
-      "h": 1280,
-      "dur": 8
-    },
-    {
-      "id": "logo-revelado-lateral-141abc",
-      "titulo": "Logo, revelado lateral",
-      "cliente": "Ruá",
-      "fecha": "2026-09-25T21:02:26.094Z",
-      "video": "media/reels/logo-revelado-lateral-141abc.mp4",
-      "portada": "media/reels/logo-revelado-lateral-141abc.jpg",
-      "w": 720,
-      "h": 1280,
-      "dur": 7
     }
   ],
   "afiches": [

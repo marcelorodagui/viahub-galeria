@@ -78,8 +78,25 @@ async function recorrer(dir) {
 const slug = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
   .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 50) || 'pieza';
 
+// "Cohabitar [28-10-2026].mp4": la pieza no se publica antes de esa fecha (día-mes-año).
+// Mientras tanto ni se procesa ni se sube; la etiqueta no forma parte del título ni del id.
+const RE_FECHA = /\s*\[(\d{1,2})-(\d{1,2})-(\d{4})\]/;
+const sinFecha = s => s.replace(RE_FECHA, '');
+function fechaProgramada(ruta) {
+  const m = ruta.match(RE_FECHA);
+  return m ? new Date(Number(m[3]), Number(m[2]) - 1, Number(m[1])) : null;
+}
+const programadas = [];
+function esFutura(ruta, dirBase) {
+  const rel = path.relative(dirBase, ruta);
+  const f = fechaProgramada(rel);
+  if (!f || f <= new Date()) return false;
+  programadas.push(`${sinFecha(rel)} → ${f.toLocaleDateString('es-CR')}`);
+  return true;
+}
+
 function titulo(archivo) {
-  let t = path.parse(archivo).name;
+  let t = sinFecha(path.parse(archivo).name);
   if (t.includes('·')) t = t.split('·').pop();
   t = t.replace(/^\s*\d+\s*[-_.)]\s*/, '').replace(/_+/g, ' ').replace(/\s+/g, ' ').trim();
   if (/^[\w-]+(\.[a-z]{2,})+$/i.test(t)) return t.toLowerCase(); // un dominio (quirodei.com) queda tal cual
@@ -89,22 +106,27 @@ function titulo(archivo) {
 // Imagen con el mismo nombre que el video (Titanium.mp4 → Titanium.png).
 function portadaPropia(video) {
   const { dir, name } = path.parse(video);
-  for (const ext of EXT_IMAGEN) {
-    const p = path.join(dir, name + ext);
-    if (existsSync(p)) return p;
+  for (const nombre of new Set([name, sinFecha(name)])) {
+    for (const ext of EXT_IMAGEN) {
+      const p = path.join(dir, nombre + ext);
+      if (existsSync(p)) return p;
+    }
   }
   return null;
 }
 
 async function describir(archivo, carpetaTipo, extra = []) {
   const st = await stat(archivo);
-  const rel = path.relative(carpetaTipo, archivo);
+  const relOriginal = path.relative(carpetaTipo, archivo);
+  const rel = sinFecha(relOriginal);
   const partes = rel.split(path.sep);
   const cliente = partes.length > 1 ? partes[0] : '';
   let huella = `${rel}|${st.size}|${st.mtimeMs}`;
   for (const f of extra) { const s = await stat(f); huella += `|${s.size}|${s.mtimeMs}`; }
   const id = `${slug(path.parse(rel).name)}-${crypto.createHash('sha1').update(huella).digest('hex').slice(0, 6)}`;
-  return { archivo, id, cliente, titulo: titulo(archivo), fecha: st.mtime.toISOString(), _orden: rel };
+  // Una pieza programada cuenta como nueva el día que sale (queda primera en su sección)
+  const fecha = (fechaProgramada(relOriginal) ?? st.mtime).toISOString();
+  return { archivo, id, cliente, titulo: titulo(archivo), fecha, _orden: rel };
 }
 
 async function procesarReel(p, portadaOrigen) {
@@ -340,9 +362,10 @@ async function main() {
   const dirMarcas = path.join(ORIGEN, 'Marcas');
   const esImagen = f => EXT_IMAGEN.has(path.extname(f).toLowerCase());
   const esVideo = f => EXT_VIDEO.has(path.extname(f).toLowerCase());
-  const archivosReels = (await recorrer(dirReels)).filter(esVideo);
-  const archivosMotion = (await recorrer(dirMotion)).filter(esVideo);
-  const archivosAfiches = (await recorrer(dirAfiches)).filter(esImagen);
+  const archivosReels = (await recorrer(dirReels)).filter(esVideo).filter(f => !esFutura(f, dirReels));
+  const archivosMotion = (await recorrer(dirMotion)).filter(esVideo).filter(f => !esFutura(f, dirMotion));
+  const archivosAfiches = (await recorrer(dirAfiches)).filter(esImagen).filter(f => !esFutura(f, dirAfiches));
+  if (programadas.length) console.log(`Programadas (todavía no se publican):\n  ⏳ ${[...new Set(programadas)].join('\n  ⏳ ')}`);
 
   console.log(`Reels: ${archivosReels.length} · Motion graphics: ${archivosMotion.length} · Imágenes de afiches: ${archivosAfiches.length}`);
   const reels = [], motion = [], afiches = [], marcas = [];
@@ -407,6 +430,8 @@ async function main() {
     const sinCambios = spawnSync('git', ['diff', '--cached', '--quiet'], { cwd: RAIZ }).status === 0;
     if (sinCambios) { console.log('No hay cambios para publicar.'); return; }
     git('commit', '-m', `Galería: ${resumen}`);
+    // Otras sesiones también suben a este repositorio: traer sus cambios antes de subir
+    if (git('pull', '--rebase', 'origin', 'main').status !== 0) throw new Error('No se pudo traer los cambios de GitHub.');
     if (git('push').status !== 0) throw new Error('No se pudo subir a GitHub.');
     console.log('Publicado. La página se actualiza en 1–2 minutos.');
   }
