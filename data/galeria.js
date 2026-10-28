@@ -1,10 +1,21 @@
 window.GALERIA = {
-  "actualizado": "2026-10-27T21:56:49.956Z",
+  "actualizado": "2026-10-28T22:49:25.141Z",
   "sitio": {
     "lema": "Tráfico relevante",
     "redes": []
   },
   "reels": [
+    {
+      "id": "cohabitar-50ac89",
+      "titulo": "Cohabitar",
+      "cliente": "Jessica Cheng",
+      "fecha": "2026-10-28T06:00:00.000Z",
+      "video": "media/reels/cohabitar-50ac89.mp4",
+      "portada": "media/reels/cohabitar-50ac89.jpg",
+      "w": 720,
+      "h": 1280,
+      "dur": 250
+    },
     {
       "id": "por-que-no-termina-sus-esculturas-248bd0",
       "titulo": "Por qué no termina sus esculturas",
