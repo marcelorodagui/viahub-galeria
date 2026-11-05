@@ -142,6 +142,32 @@
     return art;
   }
 
+  // Proyectos destacados: tarjeta grande con la portada, la escala del trabajo y acceso al caso
+  function tarjetaDestacado(m, i) {
+    const art = document.createElement('article');
+    art.className = 'destacado';
+    art.style.animationDelay = `${i * 90}ms`;
+    art.innerHTML = `
+      <button type="button" class="destacado-imagen" style="background:${esc(m.fondos.oscuro)}" aria-label="Ver el caso de ${esc(m.nombre)}">
+        ${m.portada ? `<img src="${m.portada.imagen}" alt="" loading="lazy">` : ''}
+      </button>
+      <div class="destacado-info">
+        <div class="destacado-texto">
+          <p class="destacado-etq">Proyecto destacado</p>
+          <h3>${esc(m.nombre)}</h3>
+          ${m.descripcion ? `<p class="destacado-desc">${esc(m.descripcion)}</p>` : ''}
+          <div class="destacado-acciones">
+            <button type="button" class="boton destacado-abrir">Ver el caso completo</button>
+            ${enlacesRedes(m.redes.filter(r => r.red === 'web'), 'boton secundario')}
+          </div>
+        </div>
+        ${m.cifras.length ? `<ul class="cifras">${m.cifras.map(c => `<li><strong>${esc(c.n)}</strong><span>${esc(c.texto)}</span></li>`).join('')}</ul>` : ''}
+      </div>`;
+    art.querySelector('.destacado-imagen').addEventListener('click', () => abrirCaso(m));
+    art.querySelector('.destacado-abrir').addEventListener('click', () => abrirCaso(m));
+    return art;
+  }
+
   // ---------- Página ----------
   function pintar() {
     const ver = t => estado.tipo === 'todo' || estado.tipo === t;
@@ -151,14 +177,18 @@
     const vA = ver('afiche') ? afiches.filter(delCliente) : [];
     const lista = [...vR, ...vM, ...vA];
 
-    $('marcas').replaceChildren(...vMarcas.map(tarjetaMarca));
+    const vDestacados = vMarcas.filter(m => m.destacado);
+    const vOtras = vMarcas.filter(m => !m.destacado);
+    $('destacados').replaceChildren(...vDestacados.map(tarjetaDestacado));
+    $('seccionDestacados').hidden = !vDestacados.length;
+    $('marcas').replaceChildren(...vOtras.map(tarjetaMarca));
     const llenar = (id, grupo, tarjeta, desde) => $(id).replaceChildren(
       ...grupo.map((p, i) => tarjeta(p, i, () => abrirVisor(lista, desde + i))));
     llenar('reels', vR, tarjetaReel, 0);
     llenar('motion', vM, tarjetaReel, vR.length);
     llenar('afiches', vA, tarjetaImagen, vR.length + vM.length);
 
-    for (const [sec, cuenta, n] of [['seccionMarcas', 'cuentaMarcas', vMarcas.length], ['seccionReels', 'cuentaReels', vR.length],
+    for (const [sec, cuenta, n] of [['seccionMarcas', 'cuentaMarcas', vOtras.length], ['seccionReels', 'cuentaReels', vR.length],
       ['seccionMotion', 'cuentaMotion', vM.length], ['seccionAfiches', 'cuentaAfiches', vA.length]]) {
       $(sec).hidden = !n; $(cuenta).textContent = n;
     }
@@ -240,10 +270,11 @@
         ${portada ? `<img src="${portada.imagen}" alt="${esc(m.nombre)}">` : ''}
       </header>
       <div class="caso-cuerpo">
-        <p class="caso-etiqueta">${m.identidad ? 'Identidad de marca' : 'Contenido para redes'} · Vía Hub Studio</p>
+        <p class="caso-etiqueta">${m.destacado ? 'Proyecto destacado · ' : ''}${m.identidad ? 'Identidad de marca' : 'Contenido para redes'} · Vía Hub Studio</p>
         <h2 id="casoNombre">${esc(m.nombre)}</h2>
         ${m.lema ? `<p class="caso-lema">“${esc(m.lema)}”</p>` : ''}
         ${m.descripcion ? `<p class="caso-desc">${esc(m.descripcion)}</p>` : ''}
+        ${m.cifras.length ? `<ul class="cifras caso-cifras">${m.cifras.map(c => `<li><strong>${esc(c.n)}</strong><span>${esc(c.texto)}</span></li>`).join('')}</ul>` : ''}
         <div class="caso-acciones">
           ${enlacesRedes(m.redes, 'boton')}
           ${propias.length ? `<button type="button" class="boton secundario" id="casoVerPiezas">${propias.length === 1 ? 'Ver su pieza' : `Ver sus ${propias.length} piezas`}</button>` : ''}

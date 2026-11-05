@@ -272,6 +272,43 @@ main { max-width: 1280px; margin: 0 auto; padding: 8px 16px 40px; }
   border-color: rgba(255, 255, 255, .15); padding: 6px 12px; font-size: 12px;
 }
 
+/* ---------- Proyectos destacados ---------- */
+.rejilla-destacados { display: grid; gap: 26px; }
+.destacado {
+  border-radius: 22px;
+  overflow: hidden;
+  background: var(--tarjeta);
+  border: 1px solid rgba(11, 195, 196, .28);
+  box-shadow: 0 30px 70px -40px rgba(11, 195, 196, .55);
+  animation: entrar .7s cubic-bezier(.2, .7, .2, 1) both;
+}
+.destacado-imagen {
+  display: block; width: 100%; padding: 0; border: 0; cursor: pointer;
+  aspect-ratio: 16 / 7; overflow: hidden; position: relative;
+}
+.destacado-imagen img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s cubic-bezier(.2, .7, .2, 1); }
+.destacado:hover .destacado-imagen img { transform: scale(1.03); }
+.destacado-imagen:focus-visible { outline: 2px solid var(--turquesa); outline-offset: -3px; }
+.destacado-info {
+  display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 28px 40px;
+  padding: 30px clamp(18px, 4vw, 44px) 34px; align-items: center;
+}
+.destacado-etq { margin: 0 0 6px; font-size: 11.5px; letter-spacing: .24em; text-transform: uppercase; color: var(--turquesa); font-weight: 700; }
+.destacado h3 { margin: 0; font-size: clamp(30px, 4.4vw, 46px); font-weight: 800; line-height: 1.05; }
+.destacado-desc { margin: 12px 0 0; color: var(--texto-2); font-size: 15px; line-height: 1.55; }
+.destacado-acciones { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.cifras {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;
+}
+.cifras li {
+  display: grid; gap: 2px; padding: 16px 18px;
+  border-radius: 14px; background: rgba(255, 255, 255, .04); border: 1px solid var(--linea);
+}
+.cifras strong { font-size: clamp(28px, 3.6vw, 40px); font-weight: 800; line-height: 1; color: var(--turquesa); }
+.cifras span { font-size: 13px; color: var(--texto-2); line-height: 1.35; }
+.caso-cifras { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); margin-top: 24px; max-width: 760px; }
+
 /* ---------- Caso de marca ---------- */
 .caso {
   position: fixed; inset: 0; z-index: 40;
@@ -416,7 +453,13 @@ main { max-width: 1280px; margin: 0 auto; padding: 8px 16px 40px; }
 }
 .aviso.visible { opacity: 1; transform: translate(-50%, 0); }
 
+@media (max-width: 860px) {
+  .destacado-info { grid-template-columns: 1fr; }
+}
 @media (max-width: 640px) {
+  .destacado-imagen { aspect-ratio: 4 / 3; }
+  .destacado-info { padding: 22px 16px 24px; gap: 20px; }
+  .cifras li { padding: 12px 14px; }
   .rejilla-marcas { grid-template-columns: 1fr; gap: 14px; }
   .caso-hero { aspect-ratio: 4 / 3; }
   .caso-cuerpo { padding-top: 26px; }

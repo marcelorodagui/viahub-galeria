@@ -317,6 +317,10 @@ async function procesarMarca(dirMarca) {
   console.log(`  ◆ ${carpeta}: ${identidad ? `${pasos.length} pasos de identidad` : 'solo contenido'}, ${todas.length} imágenes`);
   return {
     clave: carpeta, slug: sal, nombre: d.nombre || carpeta, identidad, redes: redes(d),
+    // "destacado: sí" la pone arriba, en Proyectos destacados; "cifras: 46 reels, 15 guías…" muestra la escala
+    destacado: /^(s[ií]|true|1)$/i.test(d.destacado || ''),
+    cifras: (d.cifras || '').split(',').map(s => s.trim().match(/^(\d[\d.,]*)\s+(.+)$/)).filter(Boolean)
+      .map(([, n, texto]) => ({ n, texto })),
     descripcion: d.descripcion || '', concepto: d.concepto || '', lema: d.lema || '',
     colores: identidad ? colores(d.colores) : [], tipografia: identidad ? d.tipografia || '' : '', fondos,
     portada, pasos: identidad ? pasos : [], _ids: todas.map(p => p.id),
@@ -404,7 +408,7 @@ async function main() {
       catch (err) { console.warn(`  ⚠ No pude procesar la marca ${e.name}: ${err.message}`); }
     }
   }
-  marcas.sort((a, b) => a.nombre.localeCompare(b.nombre, 'es'));
+  marcas.sort((a, b) => (b.destacado - a.destacado) || a.nombre.localeCompare(b.nombre, 'es'));
 
   reels.sort(porFecha); motion.sort(porFecha); afiches.sort(porFecha);
   await limpiar('reels', new Set([...reels, ...motion].map(r => r.id)));

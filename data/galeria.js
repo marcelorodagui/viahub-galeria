@@ -1,10 +1,109 @@
 window.GALERIA = {
-  "actualizado": "2026-11-04T13:00:07.174Z",
+  "actualizado": "2026-11-05T05:29:32.473Z",
   "sitio": {
     "lema": "Tráfico relevante",
     "redes": []
   },
   "reels": [
+    {
+      "id": "mito-o-dato-b9c85f",
+      "titulo": "Mito o dato",
+      "cliente": "Hipocampo",
+      "fecha": "2026-10-31T23:29:01.596Z",
+      "video": "media/reels/mito-o-dato-b9c85f.mp4",
+      "portada": "media/reels/mito-o-dato-b9c85f.jpg",
+      "w": 720,
+      "h": 1280,
+      "dur": 47
+    },
+    {
+      "id": "el-celular-y-tu-memoria-4bc921",
+      "titulo": "El celular y tu memoria",
+      "cliente": "Hipocampo",
+      "fecha": "2026-10-31T23:29:00.719Z",
+      "video": "media/reels/el-celular-y-tu-memoria-4bc921.mp4",
+      "portada": "media/reels/el-celular-y-tu-memoria-4bc921.jpg",
+      "w": 720,
+      "h": 1280,
+      "dur": 47
+    },
+    {
+      "id": "reel-para-familias-5a995c",
+      "titulo": "Reel para familias",
+      "cliente": "Archipiélago",
+      "fecha": "2026-10-31T20:36:06.237Z",
+      "video": "media/reels/reel-para-familias-5a995c.mp4",
+      "portada": "media/reels/reel-para-familias-5a995c.jpg",
+      "w": 720,
+      "h": 1280,
+      "dur": 46
+    },
+    {
+      "id": "la-ansiedad-ocupa-espacio-6b7316",
+      "titulo": "La ansiedad ocupa espacio",
+      "cliente": "Hipocampo",
+      "fecha": "2026-10-31T18:42:19.724Z",
+      "video": "media/reels/la-ansiedad-ocupa-espacio-6b7316.mp4",
+      "portada": "media/reels/la-ansiedad-ocupa-espacio-6b7316.jpg",
+      "w": 720,
+      "h": 1280,
+      "dur": 51
+    },
+    {
+      "id": "el-test-del-malvavisco-c22212",
+      "titulo": "El test del malvavisco",
+      "cliente": "Hipocampo",
+      "fecha": "2026-10-31T18:42:18.349Z",
+      "video": "media/reels/el-test-del-malvavisco-c22212.mp4",
+      "portada": "media/reels/el-test-del-malvavisco-c22212.jpg",
+      "w": 720,
+      "h": 1280,
+      "dur": 56
+    },
+    {
+      "id": "el-cerebro-de-los-taxistas-e6ee01",
+      "titulo": "El cerebro de los taxistas",
+      "cliente": "Hipocampo",
+      "fecha": "2026-10-31T18:42:10.925Z",
+      "video": "media/reels/el-cerebro-de-los-taxistas-e6ee01.mp4",
+      "portada": "media/reels/el-cerebro-de-los-taxistas-e6ee01.jpg",
+      "w": 720,
+      "h": 1280,
+      "dur": 29
+    },
+    {
+      "id": "el-hombre-que-no-podia-recordar-4a8dfb",
+      "titulo": "El hombre que no podía recordar",
+      "cliente": "Hipocampo",
+      "fecha": "2026-10-31T18:42:10.634Z",
+      "video": "media/reels/el-hombre-que-no-podia-recordar-4a8dfb.mp4",
+      "portada": "media/reels/el-hombre-que-no-podia-recordar-4a8dfb.jpg",
+      "w": 720,
+      "h": 1280,
+      "dur": 40
+    },
+    {
+      "id": "la-curva-del-olvido-470b1b",
+      "titulo": "La curva del olvido",
+      "cliente": "Hipocampo",
+      "fecha": "2026-10-31T18:42:09.059Z",
+      "video": "media/reels/la-curva-del-olvido-470b1b.mp4",
+      "portada": "media/reels/la-curva-del-olvido-470b1b.jpg",
+      "w": 720,
+      "h": 1280,
+      "dur": 21
+    },
+    {
+      "id": "que-es-hipocampo-46a03b",
+      "titulo": "Qué es Hipocampo",
+      "cliente": "Hipocampo",
+      "fecha": "2026-10-31T18:42:08.783Z",
+      "video": "media/reels/que-es-hipocampo-46a03b.mp4",
+      "portada": "media/reels/que-es-hipocampo-46a03b.jpg",
+      "w": 720,
+      "h": 1280,
+      "dur": 38
+    },
     {
       "id": "cohabitar-50ac89",
       "titulo": "Cohabitar",
@@ -141,6 +240,600 @@ window.GALERIA = {
     }
   ],
   "afiches": [
+    {
+      "id": "que-mide-la-prueba-de-admision-557556",
+      "titulo": "Qué mide la prueba de admisión",
+      "cliente": "Archipiélago",
+      "fecha": "2026-10-31T20:35:26.748Z",
+      "imagen": "media/afiches/01-8b16ef.webp",
+      "mini": "media/afiches/01-8b16ef-mini.webp",
+      "w": 1600,
+      "h": 2000,
+      "laminas": [
+        {
+          "imagen": "media/afiches/01-8b16ef.webp",
+          "mini": "media/afiches/01-8b16ef-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/02-341710.webp",
+          "mini": "media/afiches/02-341710-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/03-20459e.webp",
+          "mini": "media/afiches/03-20459e-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/04-a57066.webp",
+          "mini": "media/afiches/04-a57066-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/05-f385a7.webp",
+          "mini": "media/afiches/05-f385a7-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/06-6e716a.webp",
+          "mini": "media/afiches/06-6e716a-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/07-51aadf.webp",
+          "mini": "media/afiches/07-51aadf-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/08-fc7612.webp",
+          "mini": "media/afiches/08-fc7612-mini.webp",
+          "w": 1600,
+          "h": 2000
+        }
+      ]
+    },
+    {
+      "id": "como-aprende-el-cerebro-413d2e",
+      "titulo": "Cómo aprende el cerebro",
+      "cliente": "Archipiélago",
+      "fecha": "2026-10-31T20:35:26.725Z",
+      "imagen": "media/afiches/01-f915fb.webp",
+      "mini": "media/afiches/01-f915fb-mini.webp",
+      "w": 1600,
+      "h": 2000,
+      "laminas": [
+        {
+          "imagen": "media/afiches/01-f915fb.webp",
+          "mini": "media/afiches/01-f915fb-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/02-5bafeb.webp",
+          "mini": "media/afiches/02-5bafeb-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/03-631e8c.webp",
+          "mini": "media/afiches/03-631e8c-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/04-363925.webp",
+          "mini": "media/afiches/04-363925-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/05-e433bb.webp",
+          "mini": "media/afiches/05-e433bb-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/06-0c9ab6.webp",
+          "mini": "media/afiches/06-0c9ab6-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/07-e6be61.webp",
+          "mini": "media/afiches/07-e6be61-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/08-65c70b.webp",
+          "mini": "media/afiches/08-65c70b-mini.webp",
+          "w": 1600,
+          "h": 2000
+        }
+      ]
+    },
+    {
+      "id": "practicar-jugando-96c62f",
+      "titulo": "Practicar jugando",
+      "cliente": "Archipiélago",
+      "fecha": "2026-10-31T20:35:26.657Z",
+      "imagen": "media/afiches/01-67b4d3.webp",
+      "mini": "media/afiches/01-67b4d3-mini.webp",
+      "w": 1600,
+      "h": 2000,
+      "laminas": [
+        {
+          "imagen": "media/afiches/01-67b4d3.webp",
+          "mini": "media/afiches/01-67b4d3-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/02-947605.webp",
+          "mini": "media/afiches/02-947605-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/03-bc107c.webp",
+          "mini": "media/afiches/03-bc107c-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/04-6931ad.webp",
+          "mini": "media/afiches/04-6931ad-mini.webp",
+          "w": 1600,
+          "h": 2000
+        }
+      ]
+    },
+    {
+      "id": "las-criaturas-e89ed2",
+      "titulo": "Las criaturas",
+      "cliente": "Archipiélago",
+      "fecha": "2026-10-31T20:35:26.646Z",
+      "imagen": "media/afiches/01-2b10d4.webp",
+      "mini": "media/afiches/01-2b10d4-mini.webp",
+      "w": 1600,
+      "h": 2000,
+      "laminas": [
+        {
+          "imagen": "media/afiches/01-2b10d4.webp",
+          "mini": "media/afiches/01-2b10d4-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/02-4965d4.webp",
+          "mini": "media/afiches/02-4965d4-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/03-97af27.webp",
+          "mini": "media/afiches/03-97af27-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/04-ed869c.webp",
+          "mini": "media/afiches/04-ed869c-mini.webp",
+          "w": 1600,
+          "h": 2000
+        }
+      ]
+    },
+    {
+      "id": "tu-memoria-de-trabajo-es-una-mesa-c17c06",
+      "titulo": "Tu memoria de trabajo es una mesa",
+      "cliente": "Hipocampo",
+      "fecha": "2026-10-31T19:06:09.890Z",
+      "imagen": "media/afiches/01-a288c2.webp",
+      "mini": "media/afiches/01-a288c2-mini.webp",
+      "w": 1600,
+      "h": 2000,
+      "laminas": [
+        {
+          "imagen": "media/afiches/01-a288c2.webp",
+          "mini": "media/afiches/01-a288c2-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/02-1f9da3.webp",
+          "mini": "media/afiches/02-1f9da3-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/03-8bc4b0.webp",
+          "mini": "media/afiches/03-8bc4b0-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/04-2ce498.webp",
+          "mini": "media/afiches/04-2ce498-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/05-ee3ee1.webp",
+          "mini": "media/afiches/05-ee3ee1-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/06-cff563.webp",
+          "mini": "media/afiches/06-cff563-mini.webp",
+          "w": 1600,
+          "h": 2000
+        }
+      ]
+    },
+    {
+      "id": "el-test-del-malvavisco-9bb4ae",
+      "titulo": "El test del malvavisco",
+      "cliente": "Hipocampo",
+      "fecha": "2026-10-31T19:06:09.636Z",
+      "imagen": "media/afiches/01-cd57b0.webp",
+      "mini": "media/afiches/01-cd57b0-mini.webp",
+      "w": 1600,
+      "h": 2000,
+      "laminas": [
+        {
+          "imagen": "media/afiches/01-cd57b0.webp",
+          "mini": "media/afiches/01-cd57b0-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/02-e43632.webp",
+          "mini": "media/afiches/02-e43632-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/03-55e506.webp",
+          "mini": "media/afiches/03-55e506-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/04-f39aea.webp",
+          "mini": "media/afiches/04-f39aea-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/05-9c1782.webp",
+          "mini": "media/afiches/05-9c1782-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/06-32c47a.webp",
+          "mini": "media/afiches/06-32c47a-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/07-cb24f5.webp",
+          "mini": "media/afiches/07-cb24f5-mini.webp",
+          "w": 1600,
+          "h": 2000
+        }
+      ]
+    },
+    {
+      "id": "la-ilusion-de-saber-64ec69",
+      "titulo": "La ilusión de saber",
+      "cliente": "Hipocampo",
+      "fecha": "2026-10-31T19:06:08.668Z",
+      "imagen": "media/afiches/01-ca274c.webp",
+      "mini": "media/afiches/01-ca274c-mini.webp",
+      "w": 1600,
+      "h": 2000,
+      "laminas": [
+        {
+          "imagen": "media/afiches/01-ca274c.webp",
+          "mini": "media/afiches/01-ca274c-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/02-f60d6f.webp",
+          "mini": "media/afiches/02-f60d6f-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/03-043b3c.webp",
+          "mini": "media/afiches/03-043b3c-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/04-1be1af.webp",
+          "mini": "media/afiches/04-1be1af-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/05-fd9766.webp",
+          "mini": "media/afiches/05-fd9766-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/06-11d365.webp",
+          "mini": "media/afiches/06-11d365-mini.webp",
+          "w": 1600,
+          "h": 2000
+        }
+      ]
+    },
+    {
+      "id": "el-hombre-que-no-podia-recordar-5d5ac4",
+      "titulo": "El hombre que no podía recordar",
+      "cliente": "Hipocampo",
+      "fecha": "2026-10-31T19:06:07.964Z",
+      "imagen": "media/afiches/01-a9d2c4.webp",
+      "mini": "media/afiches/01-a9d2c4-mini.webp",
+      "w": 1600,
+      "h": 2000,
+      "laminas": [
+        {
+          "imagen": "media/afiches/01-a9d2c4.webp",
+          "mini": "media/afiches/01-a9d2c4-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/02-bc8ddd.webp",
+          "mini": "media/afiches/02-bc8ddd-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/03-c0ad76.webp",
+          "mini": "media/afiches/03-c0ad76-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/04-673799.webp",
+          "mini": "media/afiches/04-673799-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/05-e6fcda.webp",
+          "mini": "media/afiches/05-e6fcda-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/06-8f4165.webp",
+          "mini": "media/afiches/06-8f4165-mini.webp",
+          "w": 1600,
+          "h": 2000
+        }
+      ]
+    },
+    {
+      "id": "la-curva-del-olvido-19248e",
+      "titulo": "La curva del olvido",
+      "cliente": "Hipocampo",
+      "fecha": "2026-10-31T19:06:07.510Z",
+      "imagen": "media/afiches/01-25d77d.webp",
+      "mini": "media/afiches/01-25d77d-mini.webp",
+      "w": 1600,
+      "h": 2000,
+      "laminas": [
+        {
+          "imagen": "media/afiches/01-25d77d.webp",
+          "mini": "media/afiches/01-25d77d-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/02-feafdc.webp",
+          "mini": "media/afiches/02-feafdc-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/03-b06cc0.webp",
+          "mini": "media/afiches/03-b06cc0-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/04-8b7acf.webp",
+          "mini": "media/afiches/04-8b7acf-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/05-a26167.webp",
+          "mini": "media/afiches/05-a26167-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/06-7ff885.webp",
+          "mini": "media/afiches/06-7ff885-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/07-969334.webp",
+          "mini": "media/afiches/07-969334-mini.webp",
+          "w": 1600,
+          "h": 2000
+        }
+      ]
+    },
+    {
+      "id": "que-hace-tu-cerebro-mientras-dormis-7e59fa",
+      "titulo": "Qué hace tu cerebro mientras dormís",
+      "cliente": "Hipocampo",
+      "fecha": "2026-10-31T19:06:07.316Z",
+      "imagen": "media/afiches/01-ebea4f.webp",
+      "mini": "media/afiches/01-ebea4f-mini.webp",
+      "w": 1600,
+      "h": 2000,
+      "laminas": [
+        {
+          "imagen": "media/afiches/01-ebea4f.webp",
+          "mini": "media/afiches/01-ebea4f-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/02-4e8d23.webp",
+          "mini": "media/afiches/02-4e8d23-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/03-cb8db0.webp",
+          "mini": "media/afiches/03-cb8db0-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/04-610a85.webp",
+          "mini": "media/afiches/04-610a85-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/05-7ccfe7.webp",
+          "mini": "media/afiches/05-7ccfe7-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/06-e9c7a1.webp",
+          "mini": "media/afiches/06-e9c7a1-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/07-b49917.webp",
+          "mini": "media/afiches/07-b49917-mini.webp",
+          "w": 1600,
+          "h": 2000
+        }
+      ]
+    },
+    {
+      "id": "por-que-nos-llamamos-hipocampo-66773f",
+      "titulo": "Por qué nos llamamos Hipocampo",
+      "cliente": "Hipocampo",
+      "fecha": "2026-10-31T19:06:06.592Z",
+      "imagen": "media/afiches/01-09ad09.webp",
+      "mini": "media/afiches/01-09ad09-mini.webp",
+      "w": 1600,
+      "h": 2000,
+      "laminas": [
+        {
+          "imagen": "media/afiches/01-09ad09.webp",
+          "mini": "media/afiches/01-09ad09-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/02-848b99.webp",
+          "mini": "media/afiches/02-848b99-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/03-7ccbb1.webp",
+          "mini": "media/afiches/03-7ccbb1-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/04-786f2b.webp",
+          "mini": "media/afiches/04-786f2b-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/05-14e9c8.webp",
+          "mini": "media/afiches/05-14e9c8-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/06-423ef2.webp",
+          "mini": "media/afiches/06-423ef2-mini.webp",
+          "w": 1600,
+          "h": 2000
+        }
+      ]
+    },
+    {
+      "id": "puntos-rachas-y-niveles-c11117",
+      "titulo": "Puntos, rachas y niveles",
+      "cliente": "Hipocampo",
+      "fecha": "2026-10-31T19:06:05.805Z",
+      "imagen": "media/afiches/01-89c840.webp",
+      "mini": "media/afiches/01-89c840-mini.webp",
+      "w": 1600,
+      "h": 2000,
+      "laminas": [
+        {
+          "imagen": "media/afiches/01-89c840.webp",
+          "mini": "media/afiches/01-89c840-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/02-2865f5.webp",
+          "mini": "media/afiches/02-2865f5-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/03-18ceb7.webp",
+          "mini": "media/afiches/03-18ceb7-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/04-6c006d.webp",
+          "mini": "media/afiches/04-6c006d-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/05-245355.webp",
+          "mini": "media/afiches/05-245355-mini.webp",
+          "w": 1600,
+          "h": 2000
+        },
+        {
+          "imagen": "media/afiches/06-3594e6.webp",
+          "mini": "media/afiches/06-3594e6-mini.webp",
+          "w": 1600,
+          "h": 2000
+        }
+      ]
+    },
     {
       "id": "de-diwo-a-la-web-f68ac5",
       "titulo": "De Diwo a la web",
@@ -626,6 +1319,648 @@ window.GALERIA = {
   ],
   "marcas": [
     {
+      "clave": "Archipiélago",
+      "slug": "archipielago",
+      "nombre": "Archipiélago",
+      "identidad": true,
+      "redes": [
+        {
+          "red": "instagram",
+          "texto": "@hipocampo.cr",
+          "url": "https://www.instagram.com/hipocampo.cr/"
+        },
+        {
+          "red": "web",
+          "texto": "archipielago.cuncr.com",
+          "url": "https://archipielago.cuncr.com"
+        }
+      ],
+      "destacado": true,
+      "cifras": [
+        {
+          "n": "1",
+          "texto": "app instalable"
+        },
+        {
+          "n": "74",
+          "texto": "láminas de campaña"
+        },
+        {
+          "n": "4",
+          "texto": "islas con guardianes"
+        },
+        {
+          "n": "3",
+          "texto": "criaturas que crecen"
+        }
+      ],
+      "descripcion": "App de práctica para la prueba de admisión a los Liceos Experimentales Bilingües, para estudiantes de sexto grado. Una app de Hipocampo, de CUN Desarrollo Integral. Vía Hub hizo la app, su mundo visual y la campaña de lanzamiento.",
+      "concepto": "Tenía que sentirse como un buen juego de celular y no como una plataforma educativa, porque compite por la atención de chicos de 11 y 12 años. Cada estudiante despierta a un compañero, una danta, una lapa roja o una rana, que crece con su práctica en un archipiélago envuelto en niebla. Detrás de cada misión hay una estrategia neuroeducativa: práctica de recuperación, repaso espaciado y dificultad justa.",
+      "lema": "Preparación para la prueba, jugando.",
+      "colores": [
+        {
+          "nombre": "Niebla",
+          "hex": "#0B2A33"
+        },
+        {
+          "nombre": "Hondo",
+          "hex": "#061A20"
+        },
+        {
+          "nombre": "Savia",
+          "hex": "#2FD1C5"
+        },
+        {
+          "nombre": "Oro",
+          "hex": "#F2C14E"
+        },
+        {
+          "nombre": "Pergamino",
+          "hex": "#F6EFE0"
+        }
+      ],
+      "tipografia": "",
+      "fondos": {
+        "claro": "#0B2A33",
+        "oscuro": "#061A20"
+      },
+      "portada": {
+        "id": "portada-98935b",
+        "imagen": "media/marcas/archipielago/portada-98935b.webp",
+        "mini": "media/marcas/archipielago/portada-98935b-mini.webp",
+        "w": 1800,
+        "h": 788,
+        "oscuro": false,
+        "titulo": "Portada"
+      },
+      "pasos": [
+        {
+          "titulo": "Logotipo",
+          "piezas": [
+            {
+              "id": "logotipo-logotipo-7bd23a",
+              "imagen": "media/marcas/archipielago/logotipo-logotipo-7bd23a.webp",
+              "mini": "media/marcas/archipielago/logotipo-logotipo-7bd23a-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": false,
+              "titulo": "Logotipo"
+            },
+            {
+              "id": "logotipo-sello-una-app-de-hipocampo-bf947d",
+              "imagen": "media/marcas/archipielago/logotipo-sello-una-app-de-hipocampo-bf947d.webp",
+              "mini": "media/marcas/archipielago/logotipo-sello-una-app-de-hipocampo-bf947d-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": false,
+              "titulo": "Sello, una app de Hipocampo"
+            }
+          ]
+        },
+        {
+          "titulo": "El mundo",
+          "piezas": [
+            {
+              "id": "el-mundo-1-el-archipielago-al-anochecer-69bbf2",
+              "imagen": "media/marcas/archipielago/el-mundo-1-el-archipielago-al-anochecer-69bbf2.webp",
+              "mini": "media/marcas/archipielago/el-mundo-1-el-archipielago-al-anochecer-69bbf2-mini.webp",
+              "w": 1005,
+              "h": 1800,
+              "oscuro": false,
+              "titulo": "El archipiélago al anochecer"
+            },
+            {
+              "id": "el-mundo-2-isla-de-las-cascadas-62096b",
+              "imagen": "media/marcas/archipielago/el-mundo-2-isla-de-las-cascadas-62096b.webp",
+              "mini": "media/marcas/archipielago/el-mundo-2-isla-de-las-cascadas-62096b-mini.webp",
+              "w": 1800,
+              "h": 1005,
+              "oscuro": false,
+              "titulo": "Isla de las cascadas"
+            },
+            {
+              "id": "el-mundo-3-guardian-de-la-primera-isla-0c9cd6",
+              "imagen": "media/marcas/archipielago/el-mundo-3-guardian-de-la-primera-isla-0c9cd6.webp",
+              "mini": "media/marcas/archipielago/el-mundo-3-guardian-de-la-primera-isla-0c9cd6-mini.webp",
+              "w": 1800,
+              "h": 1005,
+              "oscuro": false,
+              "titulo": "Guardián de la primera isla"
+            },
+            {
+              "id": "el-mundo-4-refugio-3ca9dd",
+              "imagen": "media/marcas/archipielago/el-mundo-4-refugio-3ca9dd.webp",
+              "mini": "media/marcas/archipielago/el-mundo-4-refugio-3ca9dd-mini.webp",
+              "w": 1005,
+              "h": 1800,
+              "oscuro": false,
+              "titulo": "Refugio"
+            }
+          ]
+        },
+        {
+          "titulo": "Las criaturas",
+          "piezas": [
+            {
+              "id": "las-criaturas-1-danta-0f0b1d",
+              "imagen": "media/marcas/archipielago/las-criaturas-1-danta-0f0b1d.webp",
+              "mini": "media/marcas/archipielago/las-criaturas-1-danta-0f0b1d-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": false,
+              "titulo": "Danta"
+            },
+            {
+              "id": "las-criaturas-2-lapa-roja-6e3833",
+              "imagen": "media/marcas/archipielago/las-criaturas-2-lapa-roja-6e3833.webp",
+              "mini": "media/marcas/archipielago/las-criaturas-2-lapa-roja-6e3833-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": false,
+              "titulo": "Lapa roja"
+            },
+            {
+              "id": "las-criaturas-3-rana-be1078",
+              "imagen": "media/marcas/archipielago/las-criaturas-3-rana-be1078.webp",
+              "mini": "media/marcas/archipielago/las-criaturas-3-rana-be1078-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": false,
+              "titulo": "Rana"
+            }
+          ]
+        },
+        {
+          "titulo": "La app",
+          "piezas": [
+            {
+              "id": "la-app-1-elegi-tu-companero-54d705",
+              "imagen": "media/marcas/archipielago/la-app-1-elegi-tu-companero-54d705.webp",
+              "mini": "media/marcas/archipielago/la-app-1-elegi-tu-companero-54d705-mini.webp",
+              "w": 832,
+              "h": 1800,
+              "oscuro": false,
+              "titulo": "Elegí tu compañero"
+            },
+            {
+              "id": "la-app-2-el-mapa-de-islas-b1d830",
+              "imagen": "media/marcas/archipielago/la-app-2-el-mapa-de-islas-b1d830.webp",
+              "mini": "media/marcas/archipielago/la-app-2-el-mapa-de-islas-b1d830-mini.webp",
+              "w": 832,
+              "h": 1800,
+              "oscuro": false,
+              "titulo": "El mapa de islas"
+            },
+            {
+              "id": "la-app-3-una-mision-9399de",
+              "imagen": "media/marcas/archipielago/la-app-3-una-mision-9399de.webp",
+              "mini": "media/marcas/archipielago/la-app-3-una-mision-9399de-mini.webp",
+              "w": 832,
+              "h": 1800,
+              "oscuro": false,
+              "titulo": "Una misión"
+            },
+            {
+              "id": "la-app-4-la-guardiana-explica-el-error-792c53",
+              "imagen": "media/marcas/archipielago/la-app-4-la-guardiana-explica-el-error-792c53.webp",
+              "mini": "media/marcas/archipielago/la-app-4-la-guardiana-explica-el-error-792c53-mini.webp",
+              "w": 832,
+              "h": 1800,
+              "oscuro": false,
+              "titulo": "La guardiana explica el error"
+            },
+            {
+              "id": "la-app-5-el-refugio-4b6e95",
+              "imagen": "media/marcas/archipielago/la-app-5-el-refugio-4b6e95.webp",
+              "mini": "media/marcas/archipielago/la-app-5-el-refugio-4b6e95-mini.webp",
+              "w": 832,
+              "h": 1800,
+              "oscuro": false,
+              "titulo": "El refugio"
+            },
+            {
+              "id": "la-app-6-area-de-la-familia-059eeb",
+              "imagen": "media/marcas/archipielago/la-app-6-area-de-la-familia-059eeb.webp",
+              "mini": "media/marcas/archipielago/la-app-6-area-de-la-familia-059eeb-mini.webp",
+              "w": 1224,
+              "h": 1800,
+              "oscuro": false,
+              "titulo": "Área de la familia"
+            }
+          ]
+        },
+        {
+          "titulo": "Campaña de lanzamiento",
+          "piezas": [
+            {
+              "id": "campana-de-lanzamiento-1-algo-despierta-en-la-niebla-040643",
+              "imagen": "media/marcas/archipielago/campana-de-lanzamiento-1-algo-despierta-en-la-niebla-040643.webp",
+              "mini": "media/marcas/archipielago/campana-de-lanzamiento-1-algo-despierta-en-la-niebla-040643-mini.webp",
+              "w": 1440,
+              "h": 1800,
+              "oscuro": false,
+              "titulo": "Algo despierta en la niebla"
+            },
+            {
+              "id": "campana-de-lanzamiento-2-faltan-5-dias-e4f74b",
+              "imagen": "media/marcas/archipielago/campana-de-lanzamiento-2-faltan-5-dias-e4f74b.webp",
+              "mini": "media/marcas/archipielago/campana-de-lanzamiento-2-faltan-5-dias-e4f74b-mini.webp",
+              "w": 1440,
+              "h": 1800,
+              "oscuro": false,
+              "titulo": "Faltan 5 días"
+            },
+            {
+              "id": "campana-de-lanzamiento-3-hoy-despierta-2f5859",
+              "imagen": "media/marcas/archipielago/campana-de-lanzamiento-3-hoy-despierta-2f5859.webp",
+              "mini": "media/marcas/archipielago/campana-de-lanzamiento-3-hoy-despierta-2f5859-mini.webp",
+              "w": 1440,
+              "h": 1800,
+              "oscuro": false,
+              "titulo": "Hoy despierta"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "clave": "Hipocampo",
+      "slug": "hipocampo",
+      "nombre": "Hipocampo",
+      "identidad": true,
+      "redes": [
+        {
+          "red": "instagram",
+          "texto": "@hipocampo.cr",
+          "url": "https://www.instagram.com/hipocampo.cr/"
+        },
+        {
+          "red": "web",
+          "texto": "hipocampo.cuncr.com",
+          "url": "https://hipocampo.cuncr.com"
+        }
+      ],
+      "destacado": true,
+      "cifras": [
+        {
+          "n": "46",
+          "texto": "reels con voz"
+        },
+        {
+          "n": "29",
+          "texto": "carruseles"
+        },
+        {
+          "n": "15",
+          "texto": "guías descargables"
+        },
+        {
+          "n": "1",
+          "texto": "sitio web con Cortex"
+        }
+      ],
+      "descripcion": "Marca de contenidos y apps de CUN Desarrollo Integral que acompaña procesos de aprendizaje con estrategias neuroeducativas. Vía Hub hizo la identidad, el sistema de diseño, los reels con voz, los carruseles, las guías descargables y el sitio.",
+      "concepto": "Hipocampo habla como la tía o el tío que sabe mucho de cómo se aprende: cercano, paciente, con humor, tico y sin regañar. El símbolo es un cerebro dibujado con una sola línea, con los dos hipocampos en naranja al centro. Dos colores mandan, navy y naranja sobre crema, y todo es redondeado, sin degradados ni clichés educativos. Cada pieza con datos cierra con su fuente y un QR al estudio.",
+      "lema": "Repasar poquito y seguido le gana a estudiar toda la noche antes.",
+      "colores": [
+        {
+          "nombre": "Navy",
+          "hex": "#20274C"
+        },
+        {
+          "nombre": "Naranja",
+          "hex": "#F28C28"
+        },
+        {
+          "nombre": "Crema",
+          "hex": "#FBF7F0"
+        },
+        {
+          "nombre": "Naranja tinta",
+          "hex": "#A34E0B"
+        },
+        {
+          "nombre": "Durazno",
+          "hex": "#FDE7D3"
+        },
+        {
+          "nombre": "Lavanda",
+          "hex": "#C9CDE3"
+        }
+      ],
+      "tipografia": "Figtree",
+      "fondos": {
+        "claro": "#FBF7F0",
+        "oscuro": "#20274C"
+      },
+      "portada": {
+        "id": "portada-e8e001",
+        "imagen": "media/marcas/hipocampo/portada-e8e001.webp",
+        "mini": "media/marcas/hipocampo/portada-e8e001-mini.webp",
+        "w": 1800,
+        "h": 685,
+        "oscuro": false,
+        "titulo": "Portada"
+      },
+      "pasos": [
+        {
+          "titulo": "Logotipo",
+          "piezas": [
+            {
+              "id": "logotipo-avatar-para-redes-39b2af",
+              "imagen": "media/marcas/hipocampo/logotipo-avatar-para-redes-39b2af.webp",
+              "mini": "media/marcas/hipocampo/logotipo-avatar-para-redes-39b2af-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": false,
+              "titulo": "Avatar para redes"
+            },
+            {
+              "id": "logotipo-horizontal-oscuro-748298",
+              "imagen": "media/marcas/hipocampo/logotipo-horizontal-oscuro-748298.webp",
+              "mini": "media/marcas/hipocampo/logotipo-horizontal-oscuro-748298-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": true,
+              "titulo": "Horizontal · fondo oscuro"
+            },
+            {
+              "id": "logotipo-horizontal-af10b7",
+              "imagen": "media/marcas/hipocampo/logotipo-horizontal-af10b7.webp",
+              "mini": "media/marcas/hipocampo/logotipo-horizontal-af10b7-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": false,
+              "titulo": "Horizontal"
+            },
+            {
+              "id": "logotipo-simbolo-oscuro-097fc7",
+              "imagen": "media/marcas/hipocampo/logotipo-simbolo-oscuro-097fc7.webp",
+              "mini": "media/marcas/hipocampo/logotipo-simbolo-oscuro-097fc7-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": true,
+              "titulo": "Símbolo · fondo oscuro"
+            },
+            {
+              "id": "logotipo-simbolo-0bf5b5",
+              "imagen": "media/marcas/hipocampo/logotipo-simbolo-0bf5b5.webp",
+              "mini": "media/marcas/hipocampo/logotipo-simbolo-0bf5b5-mini.webp",
+              "w": 1600,
+              "h": 1200,
+              "oscuro": false,
+              "titulo": "Símbolo"
+            }
+          ]
+        },
+        {
+          "titulo": "Patrón de hipocampos",
+          "piezas": [
+            {
+              "id": "patron-de-hipocampos-crema-224ffc",
+              "imagen": "media/marcas/hipocampo/patron-de-hipocampos-crema-224ffc.webp",
+              "mini": "media/marcas/hipocampo/patron-de-hipocampos-crema-224ffc-mini.webp",
+              "w": 1800,
+              "h": 1800,
+              "oscuro": false,
+              "titulo": "Crema"
+            },
+            {
+              "id": "patron-de-hipocampos-naranja-726c83",
+              "imagen": "media/marcas/hipocampo/patron-de-hipocampos-naranja-726c83.webp",
+              "mini": "media/marcas/hipocampo/patron-de-hipocampos-naranja-726c83-mini.webp",
+              "w": 1800,
+              "h": 1800,
+              "oscuro": false,
+              "titulo": "Naranja"
+            },
+            {
+              "id": "patron-de-hipocampos-navy-369241",
+              "imagen": "media/marcas/hipocampo/patron-de-hipocampos-navy-369241.webp",
+              "mini": "media/marcas/hipocampo/patron-de-hipocampos-navy-369241-mini.webp",
+              "w": 1800,
+              "h": 1800,
+              "oscuro": false,
+              "titulo": "Navy"
+            }
+          ]
+        },
+        {
+          "titulo": "Guías descargables",
+          "piezas": [
+            {
+              "id": "guias-descargables-01-familias-acompanar-el-estudio-en-casa-sin-pleit-d92c66",
+              "imagen": "media/marcas/hipocampo/guias-descargables-01-familias-acompanar-el-estudio-en-casa-sin-pleit-d92c66.webp",
+              "mini": "media/marcas/hipocampo/guias-descargables-01-familias-acompanar-el-estudio-en-casa-sin-pleit-d92c66-mini.webp",
+              "w": 1392,
+              "h": 1800,
+              "oscuro": false,
+              "titulo": "Acompañar el estudio en casa sin pleitos"
+            },
+            {
+              "id": "guias-descargables-02-familias-rutinas-que-ayudan-a-aprender-928b25",
+              "imagen": "media/marcas/hipocampo/guias-descargables-02-familias-rutinas-que-ayudan-a-aprender-928b25.webp",
+              "mini": "media/marcas/hipocampo/guias-descargables-02-familias-rutinas-que-ayudan-a-aprender-928b25-mini.webp",
+              "w": 1392,
+              "h": 1800,
+              "oscuro": false,
+              "titulo": "Rutinas que ayudan a aprender"
+            },
+            {
+              "id": "guias-descargables-03-familias-preparar-una-prueba-importante-en-fami-6d1fcf",
+              "imagen": "media/marcas/hipocampo/guias-descargables-03-familias-preparar-una-prueba-importante-en-fami-6d1fcf.webp",
+              "mini": "media/marcas/hipocampo/guias-descargables-03-familias-preparar-una-prueba-importante-en-fami-6d1fcf-mini.webp",
+              "w": 1392,
+              "h": 1800,
+              "oscuro": false,
+              "titulo": "Preparar una prueba importante en familia"
+            },
+            {
+              "id": "guias-descargables-04-escuela-mi-superpoder-para-recordar-6c2257",
+              "imagen": "media/marcas/hipocampo/guias-descargables-04-escuela-mi-superpoder-para-recordar-6c2257.webp",
+              "mini": "media/marcas/hipocampo/guias-descargables-04-escuela-mi-superpoder-para-recordar-6c2257-mini.webp",
+              "w": 1392,
+              "h": 1800,
+              "oscuro": false,
+              "titulo": "Mi superpoder para recordar"
+            },
+            {
+              "id": "guias-descargables-05-escuela-aprendo-poquito-y-seguido-783a57",
+              "imagen": "media/marcas/hipocampo/guias-descargables-05-escuela-aprendo-poquito-y-seguido-783a57.webp",
+              "mini": "media/marcas/hipocampo/guias-descargables-05-escuela-aprendo-poquito-y-seguido-783a57-mini.webp",
+              "w": 1392,
+              "h": 1800,
+              "oscuro": false,
+              "titulo": "Aprendo poquito y seguido"
+            },
+            {
+              "id": "guias-descargables-06-escuela-cuando-me-equivoco-aprendo-9ee569",
+              "imagen": "media/marcas/hipocampo/guias-descargables-06-escuela-cuando-me-equivoco-aprendo-9ee569.webp",
+              "mini": "media/marcas/hipocampo/guias-descargables-06-escuela-cuando-me-equivoco-aprendo-9ee569-mini.webp",
+              "w": 1392,
+              "h": 1800,
+              "oscuro": false,
+              "titulo": "Cuando me equivoco aprendo"
+            },
+            {
+              "id": "guias-descargables-07-colegio-estudia-menos-horas-y-recorda-mas-2c1df1",
+              "imagen": "media/marcas/hipocampo/guias-descargables-07-colegio-estudia-menos-horas-y-recorda-mas-2c1df1.webp",
+              "mini": "media/marcas/hipocampo/guias-descargables-07-colegio-estudia-menos-horas-y-recorda-mas-2c1df1-mini.webp",
+              "w": 1392,
+              "h": 1800,
+              "oscuro": false,
+              "titulo": "Estudiá menos horas y recordá más"
+            },
+            {
+              "id": "guias-descargables-08-colegio-tu-plan-para-los-examenes-6557c2",
+              "imagen": "media/marcas/hipocampo/guias-descargables-08-colegio-tu-plan-para-los-examenes-6557c2.webp",
+              "mini": "media/marcas/hipocampo/guias-descargables-08-colegio-tu-plan-para-los-examenes-6557c2-mini.webp",
+              "w": 1392,
+              "h": 1800,
+              "oscuro": false,
+              "titulo": "Tu plan para los exámenes"
+            },
+            {
+              "id": "guias-descargables-09-colegio-el-celular-el-sueno-y-tu-concentracion-433647",
+              "imagen": "media/marcas/hipocampo/guias-descargables-09-colegio-el-celular-el-sueno-y-tu-concentracion-433647.webp",
+              "mini": "media/marcas/hipocampo/guias-descargables-09-colegio-el-celular-el-sueno-y-tu-concentracion-433647-mini.webp",
+              "w": 1392,
+              "h": 1800,
+              "oscuro": false,
+              "titulo": "El celular, el sueño y tu concentración"
+            },
+            {
+              "id": "guias-descargables-10-universidad-tecnicas-de-estudio-con-evidencia-p-9014dd",
+              "imagen": "media/marcas/hipocampo/guias-descargables-10-universidad-tecnicas-de-estudio-con-evidencia-p-9014dd.webp",
+              "mini": "media/marcas/hipocampo/guias-descargables-10-universidad-tecnicas-de-estudio-con-evidencia-p-9014dd-mini.webp",
+              "w": 1392,
+              "h": 1800,
+              "oscuro": false,
+              "titulo": "Técnicas de estudio con evidencia para la U"
+            },
+            {
+              "id": "guias-descargables-11-universidad-organiza-el-semestre-y-vence-la-pro-4131c0",
+              "imagen": "media/marcas/hipocampo/guias-descargables-11-universidad-organiza-el-semestre-y-vence-la-pro-4131c0.webp",
+              "mini": "media/marcas/hipocampo/guias-descargables-11-universidad-organiza-el-semestre-y-vence-la-pro-4131c0-mini.webp",
+              "w": 1392,
+              "h": 1800,
+              "oscuro": false,
+              "titulo": "Organizá el semestre y vencé la procrastinación"
+            },
+            {
+              "id": "guias-descargables-12-universidad-concentracion-profunda-para-estudia-386466",
+              "imagen": "media/marcas/hipocampo/guias-descargables-12-universidad-concentracion-profunda-para-estudia-386466.webp",
+              "mini": "media/marcas/hipocampo/guias-descargables-12-universidad-concentracion-profunda-para-estudia-386466-mini.webp",
+              "w": 1392,
+              "h": 1800,
+              "oscuro": false,
+              "titulo": "Concentración profunda para estudiar"
+            },
+            {
+              "id": "guias-descargables-13-trabajo-foco-en-el-trabajo-menos-multitarea-097b98",
+              "imagen": "media/marcas/hipocampo/guias-descargables-13-trabajo-foco-en-el-trabajo-menos-multitarea-097b98.webp",
+              "mini": "media/marcas/hipocampo/guias-descargables-13-trabajo-foco-en-el-trabajo-menos-multitarea-097b98-mini.webp",
+              "w": 1392,
+              "h": 1800,
+              "oscuro": false,
+              "titulo": "Foco en el trabajo, menos multitarea"
+            },
+            {
+              "id": "guias-descargables-14-trabajo-metas-que-si-se-cumplen-ea94de",
+              "imagen": "media/marcas/hipocampo/guias-descargables-14-trabajo-metas-que-si-se-cumplen-ea94de.webp",
+              "mini": "media/marcas/hipocampo/guias-descargables-14-trabajo-metas-que-si-se-cumplen-ea94de-mini.webp",
+              "w": 1392,
+              "h": 1800,
+              "oscuro": false,
+              "titulo": "Metas que sí se cumplen"
+            },
+            {
+              "id": "guias-descargables-15-trabajo-aprender-algo-nuevo-siendo-adulto-2b34e3",
+              "imagen": "media/marcas/hipocampo/guias-descargables-15-trabajo-aprender-algo-nuevo-siendo-adulto-2b34e3.webp",
+              "mini": "media/marcas/hipocampo/guias-descargables-15-trabajo-aprender-algo-nuevo-siendo-adulto-2b34e3-mini.webp",
+              "w": 1392,
+              "h": 1800,
+              "oscuro": false,
+              "titulo": "Aprender algo nuevo siendo adulto"
+            }
+          ]
+        },
+        {
+          "titulo": "Redes",
+          "piezas": [
+            {
+              "id": "redes-1-banner-de-youtube-247398",
+              "imagen": "media/marcas/hipocampo/redes-1-banner-de-youtube-247398.webp",
+              "mini": "media/marcas/hipocampo/redes-1-banner-de-youtube-247398-mini.webp",
+              "w": 1800,
+              "h": 1013,
+              "oscuro": false,
+              "titulo": "Banner de YouTube"
+            },
+            {
+              "id": "redes-2-portada-de-whatsapp-b2c0ab",
+              "imagen": "media/marcas/hipocampo/redes-2-portada-de-whatsapp-b2c0ab.webp",
+              "mini": "media/marcas/hipocampo/redes-2-portada-de-whatsapp-b2c0ab-mini.webp",
+              "w": 1800,
+              "h": 1013,
+              "oscuro": false,
+              "titulo": "Portada de WhatsApp"
+            },
+            {
+              "id": "redes-3-perfil-b735d4",
+              "imagen": "media/marcas/hipocampo/redes-3-perfil-b735d4.webp",
+              "mini": "media/marcas/hipocampo/redes-3-perfil-b735d4-mini.webp",
+              "w": 1800,
+              "h": 1800,
+              "oscuro": false,
+              "titulo": "Perfil"
+            },
+            {
+              "id": "redes-4-miniatura-de-video-b96004",
+              "imagen": "media/marcas/hipocampo/redes-4-miniatura-de-video-b96004.webp",
+              "mini": "media/marcas/hipocampo/redes-4-miniatura-de-video-b96004-mini.webp",
+              "w": 1800,
+              "h": 1013,
+              "oscuro": false,
+              "titulo": "Miniatura de video"
+            },
+            {
+              "id": "redes-5-portada-de-video-vertical-b401d2",
+              "imagen": "media/marcas/hipocampo/redes-5-portada-de-video-vertical-b401d2.webp",
+              "mini": "media/marcas/hipocampo/redes-5-portada-de-video-vertical-b401d2-mini.webp",
+              "w": 1013,
+              "h": 1800,
+              "oscuro": false,
+              "titulo": "Portada de video vertical"
+            }
+          ]
+        },
+        {
+          "titulo": "Sitio web",
+          "piezas": [
+            {
+              "id": "sitio-web-1-inicio-c67e2d",
+              "imagen": "media/marcas/hipocampo/sitio-web-1-inicio-c67e2d.webp",
+              "mini": "media/marcas/hipocampo/sitio-web-1-inicio-c67e2d-mini.webp",
+              "w": 1800,
+              "h": 1125,
+              "oscuro": false,
+              "titulo": "Inicio"
+            },
+            {
+              "id": "sitio-web-2-cortex-la-biblioteca-61bd79",
+              "imagen": "media/marcas/hipocampo/sitio-web-2-cortex-la-biblioteca-61bd79.webp",
+              "mini": "media/marcas/hipocampo/sitio-web-2-cortex-la-biblioteca-61bd79-mini.webp",
+              "w": 1800,
+              "h": 1125,
+              "oscuro": false,
+              "titulo": "Cortex, la biblioteca"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "clave": "Agendo",
       "slug": "agendo",
       "nombre": "Agendo",
@@ -637,6 +1972,8 @@ window.GALERIA = {
           "url": "https://agendo-xi7.pages.dev"
         }
       ],
+      "destacado": false,
+      "cifras": [],
       "descripcion": "Plataforma de reservas de Vía Hub Studio. Las familias apartan espacios desde el celular, el equipo ve su agenda por semana y por mes, y todo se sincroniza con Google Calendar. Su primer cliente es CUN Desarrollo Integral.",
       "concepto": "",
       "lema": "",
@@ -727,6 +2064,8 @@ window.GALERIA = {
       "nombre": "Dìwö",
       "identidad": true,
       "redes": [],
+      "destacado": false,
+      "cifras": [],
       "descripcion": "Programador de publicaciones para Instagram y Facebook, hecho para pymes.",
       "concepto": "Dìwö significa \"sol\" en bribri. El símbolo es un reloj de sol: el sol más el tiempo, que es justo lo que hace la app, programar. Evita a propósito los recursos típicos de los logos hechos con IA (destellos, rayos, degradados) y respeta la ortografía bribri de la palabra.",
       "lema": "Cada mensaje, a su hora",
@@ -948,6 +2287,8 @@ window.GALERIA = {
       "nombre": "Pulso",
       "identidad": true,
       "redes": [],
+      "destacado": false,
+      "cifras": [],
       "descripcion": "App de escritorio de Vía Hub Studio para editar video conversando con Claude y dejar el audio limpio: corta por frases o por compases, pone textos y motion graphics y limpia voces, ruido y eco.",
       "concepto": "Un video de evento tiene pulso dos veces: el de la música, que marca dónde cortar, y el de la gente que celebra. El isotipo es un compás de 4/4 que forma un botón de reproducir: cuatro barras que se acortan hasta casi un punto. El primer tiempo, el fuerte, late en coral; las otras tres van en el turquesa de Vía Hub, porque Pulso es de la familia del estudio.",
       "lema": "Cortá al pulso",
@@ -1158,6 +2499,8 @@ window.GALERIA = {
           "url": "https://quirodei-web.pages.dev"
         }
       ],
+      "destacado": false,
+      "cifras": [],
       "descripcion": "Clínica quiropráctica de la Dra. Deilyn Solano Bonilla en Montes de Oca. Identidad, sitio web nuevo y contenido para redes; el blog y los testimonios del sitio se publican desde Diwo.",
       "concepto": "El enfoque de la doctora es el sistema nervioso, no solo la columna. Por eso la firma visual del sitio no son huesos ni columnas sino una sinapsis: un axón que le pasa el impulso a una dendrita, sutil y casi transparente. Se rediseñó cómo se ve y cómo se recorre el sitio, respetando palabra por palabra los textos de la doctora.",
       "lema": "",
@@ -1315,6 +2658,8 @@ window.GALERIA = {
           "url": "https://musicarua.com"
         }
       ],
+      "destacado": false,
+      "cifras": [],
       "descripcion": "Música en vivo para bodas en Costa Rica.",
       "concepto": "",
       "lema": "Música en vivo · Costa Rica",
@@ -1347,6 +2692,8 @@ window.GALERIA = {
           "url": "https://www.instagram.com/welltalkcr/"
         }
       ],
+      "destacado": false,
+      "cifras": [],
       "descripcion": "Clases de inglés y español para adultos en Costa Rica.",
       "concepto": "",
       "lema": "",
