@@ -1,5 +1,5 @@
 window.GALERIA = {
-  "actualizado": "2026-11-09T13:00:16.725Z",
+  "actualizado": "2026-11-10T13:00:13.985Z",
   "sitio": {
     "lema": "Tráfico relevante",
     "redes": []
